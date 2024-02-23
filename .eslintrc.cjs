@@ -6,16 +6,27 @@ module.exports = {
     'plugin:react/recommended',
     'plugin:react/jsx-runtime',
     'plugin:react-hooks/recommended',
+    'plugin:import/recommended',
+    'plugin:jsx-a11y/recommended',
+    'eslint-config-prettier',
   ],
   ignorePatterns: ['dist', '.eslintrc.cjs'],
   parserOptions: { ecmaVersion: 'latest', sourceType: 'module' },
-  settings: { react: { version: '18.2' } },
+  settings: {
+    // Tells eslint-plugin-react to automatically detect the version of React to use.
+    react: { version: 'detect' },
+
+    // Tells eslint how to resolve imports
+    'import/resolver': {
+      node: {
+        paths: ['src'],
+        extensions: ['.js', '.jsx', '.ts', '.tsx'],
+      },
+    },
+  },
   plugins: ['react-refresh'],
   rules: {
     'react/jsx-no-target-blank': 'off',
-    'react-refresh/only-export-components': [
-      'warn',
-      { allowConstantExport: true },
-    ],
+    'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],
   },
 }
