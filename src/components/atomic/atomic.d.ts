@@ -1,0 +1,4 @@
+type TypoType = {
+    color?:string;
+
+}

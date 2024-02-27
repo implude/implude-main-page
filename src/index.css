@@ -1,12 +1,24 @@
+@font-face {
+    font-family: 'SUIT-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_suit@1.0/SUIT-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
 html,body {
 
     width:100vw;
     height:100vh;
     margin:0;
     padding:0;
+
 }
-
-
+* {
+    font-family:'SUIT-Regular', sans-serif;
+    box-sizing: border-box;
+    user-select: none;
+}
 :root {
     --gray-0:#FBFBFB;
     --gray-100:#EBEDEF;
