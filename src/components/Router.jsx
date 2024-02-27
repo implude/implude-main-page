@@ -1,7 +1,7 @@
 import React from 'react'
 import { BrowserRouter, Routes, Route, NavLink, Outlet } from 'react-router-dom'
 import MainPage from '../pages/Main/MainPage'
-import HistoryPage from '../pages/History/HistoryPage'
+import HistoryPage from '../pages/History/HistoryPage.tsx'
 import VisionPage from '../pages/Vision/VisionPage'
 import ProjectsPage from '../pages/Projects/ProjectsPage'
 import RecruitPage from '../pages/Recruit/RecruitPage'
