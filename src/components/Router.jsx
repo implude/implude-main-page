@@ -1,11 +1,23 @@
 import React from 'react'
-import { BrowserRouter, Routes, Route, NavLink } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, NavLink, Outlet } from 'react-router-dom'
 import MainPage from '../pages/Main/MainPage'
 import HistoryPage from '../pages/History/HistoryPage'
 import VisionPage from '../pages/Vision/VisionPage'
 import ProjectsPage from '../pages/Projects/ProjectsPage'
 import RecruitPage from '../pages/Recruit/RecruitPage'
+import Footer from '../components/Footer'
+import Header from '../components/Header'
+import HeaderBanner from '../components/HeaderBanner'
+const Layout = () => {
 
+
+  return <>
+      <Header/>
+      <HeaderBanner/>
+        <Outlet/>
+      <Footer/>
+  </>
+}
 export default function Router() {
   return (
     <BrowserRouter>
@@ -29,11 +41,13 @@ export default function Router() {
       </nav>
 
       <Routes>
-        <Route path="/" element={<MainPage />} />
-        <Route path="/history" element={<HistoryPage />} />
-        <Route path="/vision" element={<VisionPage />} />
-        <Route path="/projects" element={<ProjectsPage />} />
-        <Route path="/recruit" element={<RecruitPage />} />
+        <Route element={<Layout/>}>
+          <Route path="/" element={<MainPage />} />
+          <Route path="/history" element={<HistoryPage />} />
+          <Route path="/vision" element={<VisionPage />} />
+          <Route path="/projects" element={<ProjectsPage />} />
+          <Route path="/recruit" element={<RecruitPage />} />          
+        </Route>
       </Routes>
     </BrowserRouter>
   )
