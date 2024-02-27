@@ -1,0 +1,37 @@
+html,body {
+
+    width:100vw;
+    height:100vh;
+    margin:0;
+    padding:0;
+}
+
+
+:root {
+    --gray-0:#FBFBFB;
+    --gray-100:#EBEDEF;
+    --gray-200:#DADCDE;
+    --gray-300:#CACBCD;
+    --gray-400:#ABACAF;
+    --gray-500:#8D9093;
+    --gray-600:#64676C;
+    --gray-700:#56595D;
+    --gray-800:#3B3D3F;
+    --gray-900:#212325;
+
+    --brand-100:#CCE4FF;
+    --brand-200:#99C8FF;
+    --brand-300:#66ADFF;
+    --brand-400:#3391FF;
+    --brand-500:#0076FF;
+    --brand-600:#005ECC;
+    --brand-700:#004799;
+    --brand-800:#002F66;
+    --brand-900:#001833;
+
+    --negative-500:#F63A3A;
+
+    --caution-500:#FFD224;
+
+    --positive-500:#27B278;
+}
