@@ -1,7 +1,7 @@
 import React from 'react'
 import { Col, Header1, Row, Title } from './atomic'
 
-import Implude from '../assets/implude.svg?react'
+import Implude from '../assets/implude-light.svg?react'
 import Youtube from '../assets/youtube.svg?react'
 import Instagram from '../assets/instagram.svg?react'
 import styled from 'styled-components'
@@ -32,10 +32,10 @@ const Footer = () => {
             </Col>
           </Col>
           <Row gap={'32px'}>
-            <Link to={'https://youtube.com'} style={{ cursor: 'pointer' }}>
+            <Link to={'https://www.youtube.com/@implude_official/featured'} style={{ cursor: 'pointer' }}>
               <Youtube />
             </Link>
-            <Link to={'https://instagram.com'} style={{ cursor: 'pointer' }}>
+            <Link to={'https://www.instagram.com/implude_official/'} style={{ cursor: 'pointer' }}>
               <Instagram />
             </Link>
           </Row>

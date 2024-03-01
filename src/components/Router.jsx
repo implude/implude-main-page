@@ -9,14 +9,14 @@ import Footer from '../components/Footer'
 import Header from '../components/Header'
 import HeaderBanner from '../components/HeaderBanner'
 const Layout = () => {
-
-
-  return <>
-      <Header/>
-      <HeaderBanner/>
-        <Outlet/>
-      <Footer/>
-  </>
+  return (
+    <>
+      <Header />
+      <HeaderBanner />
+      <Outlet />
+      <Footer />
+    </>
+  )
 }
 export default function Router() {
   return (
@@ -41,12 +41,12 @@ export default function Router() {
       </nav>
 
       <Routes>
-        <Route element={<Layout/>}>
+        <Route element={<Layout />}>
           <Route path="/" element={<MainPage />} />
           <Route path="/history" element={<HistoryPage />} />
           <Route path="/vision" element={<VisionPage />} />
           <Route path="/projects" element={<ProjectsPage />} />
-          <Route path="/recruit" element={<RecruitPage />} />          
+          <Route path="/recruit" element={<RecruitPage />} />
         </Route>
       </Routes>
     </BrowserRouter>
