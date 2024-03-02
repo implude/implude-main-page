@@ -1,10 +1,12 @@
 import React from 'react'
 import styled, { css } from 'styled-components'
-import { Link } from 'react-router-dom'
+import { Link, Outlet, useParams } from 'react-router-dom'
 import { Col, Row, Wrap, Title, Header1, Description } from '../../components/atomic'
 import Implude from '../../assets/implude.svg?react'
+import { imageFolderPath, projects } from './ProjectData.json'
 
 export default function ProjectsPage() {
+  const { id } = useParams()
   const thumbnailFolderPath = './src/assets/ProjectThumbnail/'
   const thumbnailNames = [
     'JipGaGoSipDa.jpg',
@@ -19,35 +21,38 @@ export default function ProjectsPage() {
     'VOAH.jpg',
   ]
 
+  console.log(projects)
   return (
-    <Row style={{ padding: '220px 0' }}>
-      <Col align="center" gap={'120px'}>
-        <Title color={'--gray-black'}>진행한 프로젝트</Title>
-        <Row justify="center">
-          <Wrap gap={'58px'} style={{ flexBasis: '1700px' }}>
-            {thumbnailNames.reverse().map((thumbnailName) => (
-              <Link
-                to={'https://www.youtube.com/watch?v=PYtsD-X_UiQ&pp=ygUZYm9jY2hpIHRoZSByb2NrIG11cmkgbXVyaQ%3D%3D'}
-                style={{ cursor: 'pointer' }}
-              >
-                <ProjectImg src={thumbnailFolderPath + thumbnailName} alt={thumbnailName} />
-              </Link>
-            ))}
-            {[...Array((thumbnailNames.length * 2) % 3)].map(() => (
-              <EmptyProjectImg height={'297px'} width={'528px'} justify="center" align="center">
-                <Implude />
-              </EmptyProjectImg>
-            ))}
-          </Wrap>
-        </Row>
+    <>
+      <Outlet />
+      <Col align="center" gap={'120px'} width={'1700px'} margin={'220px auto'}>
+        <Title color={'--gray-black'}>{id !== undefined ? '다른 프로젝트 둘러보기' : '진행한 프로젝트'}</Title>
+        <Wrap gap={'58px'} justify="center">
+          {projects.reverse().map((project, i) => {
+            console.log(project, project.id)
+            return (
+              <>
+                {String(project.id) !== id && (
+                  <Link to={'/projects/' + project.id} style={{ cursor: 'pointer' }}>
+                    <ProjectImg src={imageFolderPath + project.imageUrl[0]} alt={project.title} />
+                  </Link>
+                )}
+              </>
+            )
+          })}
+          {[...Array(((projects.length - Number(Boolean(id))) * 2) % 3)].map(() => (
+            <EmptyProjectImg height={'297px'} width={'528px'} justify="center" align="center">
+              <Implude />
+            </EmptyProjectImg>
+          ))}
+        </Wrap>
       </Col>
-    </Row>
+    </>
   )
 }
 
 const ProjectImg = styled.img`
   height: 297px;
-  width: 528px;
   border-radius: 24px;
 `
 const EmptyProjectImg = styled(Row)`

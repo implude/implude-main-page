@@ -4,6 +4,8 @@ export interface flex {
   alignContent?: string
   gap?: string
   $reverse?: boolean
+  padding?: string
+  margin?: string
 }
 
 export interface widthAndHeight {
