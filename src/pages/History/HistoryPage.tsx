@@ -49,7 +49,11 @@ export default function HistoryPage() {
               {[...Array(9)].map((v, i) => (
                 <>
                   <Row width="120px" justify="space-between">
-                    <Year hover={{ color: '--gray-black' }} enabled={2023 - i === activated} onClick={() => setActivated(2023 - i)}>
+                    <Year
+                      hover={{ color: '--gray-black' }}
+                      enabled={2023 - i === activated}
+                      onClick={() => setActivated(2023 - i)}
+                    >
                       {2023 - i}
                     </Year>
                     <YearCircle enabled={2023 - i === activated} />
@@ -99,7 +103,9 @@ export default function HistoryPage() {
                   2020.07.21
                 </Header1>
               </Row>
-              <Title color={'--gray-black'}>[STAC2022] 미래산업 부문 대상 'ASD' "AI를 통한 더 좋은 공부 방법을 소개해요"</Title>
+              <Title color={'--gray-black'}>
+                [STAC2022] 미래산업 부문 대상 'ASD' "AI를 통한 더 좋은 공부 방법을 소개해요"
+              </Title>
             </Col>
           </Link>
         </Col>

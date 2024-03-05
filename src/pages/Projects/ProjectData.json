@@ -1,0 +1,116 @@
+{
+  "imageFolderPath": "./src/assets/ProjectThumbnail/",
+  "projects": [
+    {
+      "id": 1,
+      "imageUrl": ["JipGaGoSipDa.jpg"],
+      "year": 2020,
+      "title": "",
+      "detail": "",
+      "achievement": null,
+      "media": null
+    },
+    {
+      "id": 2,
+      "imageUrl": ["DAYCUBE.jpg"],
+      "year": 2020,
+      "title": "",
+      "detail": "",
+      "achievement": null,
+      "media": null
+    },
+    {
+      "id": 3,
+      "imageUrl": ["MOLA.jpg"],
+      "year": 2020,
+      "title": "",
+      "detail": "",
+      "achievement": null,
+      "media": null
+    },
+    {
+      "id": 4,
+      "imageUrl": ["JOIN.jpg"],
+      "year": 2020,
+      "title": "",
+      "detail": "",
+      "achievement": null,
+      "media": null
+    },
+    {
+      "id": 5,
+      "imageUrl": ["DINEON.jpg"],
+      "year": 2020,
+      "title": "",
+      "detail": "",
+      "achievement": null,
+      "media": null
+    },
+    {
+      "id": 6,
+      "imageUrl": ["ITNun.jpg"],
+      "year": 2022,
+      "title": "",
+      "detail": "",
+      "achievement": null,
+      "media": null
+    },
+    {
+      "id": 7,
+      "imageUrl": ["ASD.jpg", "ASD2.jpg"],
+      "year": 2022,
+      "title": "학습 환경 개선 프로젝트, ASD",
+      "detail": [
+        {
+          "content": "우리는 공부를 할 때에 수많은 방해에 노출되어 있습니다.\n\n그중 가장 치명적인 것은 모바일 기기라고 할 수 있는데요, ",
+          "bold": false
+        },
+        {
+          "content": "ASD는 모바일 기기로부터의 방해를 받지 않도록 돕습니다. 자체적으로 개발한 인공지능 스피커와 함께 사용",
+          "bold": true
+        },
+        {
+          "content": "하며, 스피커 위에 기기를 올리면 공부시간에 돌입하며 방해금지 모드가 됩니다.\n\n인공지능 스피커에게 말로 명령을 내려 모바일 기기와의 불필요한 접촉을 막을 수 있습니다.",
+          "bold": false
+        }
+      ],
+      "achievement": [
+        { "content": "STA+C", "highlight": false },
+        { "content": "대상", "highlight": true },
+        { "content": "수상", "highlight": false }
+      ],
+      "media": {
+        "press": "게임 동아",
+        "date": "2022.11.14",
+        "title": "[STAC2022] 미래산업 부문 대상 'ASD' \"AI를 통한 더 좋은 공부 방법을 소개해요\""
+      }
+    },
+    {
+      "id": 8,
+      "imageUrl": ["Yummy.jpg"],
+      "year": 2023,
+      "title": "",
+      "detail": "",
+      "achievement": null,
+      "media": null
+    },
+    {
+      "id": 9,
+      "imageUrl": ["MK1.jpg"],
+      "year": 2023,
+      "title": "",
+      "detail": "",
+      "achievement": null,
+      "media": null
+    },
+    {
+      "id": 10,
+      "imageUrl": ["VOAH.jpg"],
+      "year": 2023,
+      "title": "",
+      "detail": "",
+      "achievement": null,
+      "media": null
+    }
+  ]
+}
