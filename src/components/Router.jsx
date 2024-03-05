@@ -1,28 +1,32 @@
 import React from 'react'
 import { BrowserRouter, Routes, Route, NavLink, Outlet } from 'react-router-dom'
+
 import MainPage from '../pages/Main/MainPage'
 import HistoryPage from '../pages/History/HistoryPage.tsx'
 import VisionPage from '../pages/Vision/VisionPage'
 import ProjectsPage from '../pages/Projects/ProjectsPage'
+import ProjectPage from '../pages/Projects/ProjectPage'
 import RecruitPage from '../pages/Recruit/RecruitPage'
+
 import Footer from '../components/Footer'
 import Header from '../components/Header'
 import HeaderBanner from '../components/HeaderBanner'
+
 const Layout = () => {
-
-
-  return <>
-      <Header/>
-      <HeaderBanner/>
-        <Outlet/>
-      <Footer/>
-  </>
+  return (
+    <>
+      <Header />
+      <HeaderBanner />
+      <Outlet />
+      <Footer />
+    </>
+  )
 }
+
 export default function Router() {
   return (
     <BrowserRouter>
-      <nav>
-        {/* class에 함수 넣는거 수정해야 함 */}
+      {/* <nav>
         <NavLink className={({ isActive }) => 'nav-link' + (isActive ? ' click' : '')} to="/">
           MainPage
         </NavLink>
@@ -38,15 +42,17 @@ export default function Router() {
         <NavLink className={({ isActive }) => 'nav-link' + (isActive ? ' click' : '')} to="/recruit">
           RecruitPage
         </NavLink>
-      </nav>
+      </nav> */}
 
       <Routes>
-        <Route element={<Layout/>}>
+        <Route element={<Layout />}>
           <Route path="/" element={<MainPage />} />
           <Route path="/history" element={<HistoryPage />} />
           <Route path="/vision" element={<VisionPage />} />
-          <Route path="/projects" element={<ProjectsPage />} />
-          <Route path="/recruit" element={<RecruitPage />} />          
+          <Route path="/projects" element={<ProjectsPage />}>
+            <Route path=":id" element={<ProjectPage />} />
+          </Route>
+          <Route path="/recruit" element={<RecruitPage />} />
         </Route>
       </Routes>
     </BrowserRouter>
