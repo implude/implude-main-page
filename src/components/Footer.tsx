@@ -1,5 +1,5 @@
 import React from 'react'
-import { Col, Header1, Row, Title, Wrap } from './atomic'
+import { Col, Header1, Header2, Row, Title, Wrap, Detail } from './atomic'
 
 import Implude from '../assets/implude-light.svg?react'
 import Youtube from '../assets/youtube.svg?react'
@@ -14,10 +14,12 @@ const Footer = () => {
           <Wrap gap={'1rem'} align="center">
             <Implude />
             <Col align="start">
-              <Title color="--gray-white" $bold>
+              <Header2 color="--gray-white" $bold>
                 #IMPLUDE
-              </Title>
-              <Header1 color="--gray-white">IMPORT + INCLUDE</Header1>
+              </Header2>
+              <Wrap gap="0.5rem">
+                <Detail color="--gray-white">IMPORT </Detail> <Detail color="--gray-white"> + INCLUDE</Detail>
+              </Wrap>
             </Col>
           </Wrap>
           <Row gap={'2rem'}>
@@ -52,8 +54,11 @@ const Container = styled(Col)`
   div {
     user-select: text;
   }
+  @media (max-width: 490px) {
+    padding: 4rem 3.8rem;
+  }
 `
-const Info = styled(Header1)`
+const Info = styled(Detail)`
   color: var(--gray-white);
   text-wrap: wrap;
 `

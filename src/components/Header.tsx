@@ -1,21 +1,22 @@
 import React, { useState } from 'react'
-import { Header1, Row, Title, Wrap, HeaderMenu, MenuWrap, MenuImage } from './atomic'
+import styled from 'styled-components'
+import { Header1, Row, Title, Wrap, Detail } from './atomic'
 import { Link } from 'react-router-dom'
 
 const Header = () => {
-  const [isMenuOpened, setIsMenuOpened] = useState(0)
+  const [isMenuOpened, setIsMenuOpened] = useState(false)
 
   return (
     <>
-      <Row style={{ padding: '0.75rem 4.438rem' }} gap={'3.25rem'} justify="space-between">
+      <Row style={{ padding: '0.75rem 4.438rem' }} gap={'3.25rem'} justify="space-between" align="center">
         <Link to="/">
-          <Title color="--gray-900" $bold>
+          <Header1 color="--gray-900" $bold>
             #IMPLUDE
-          </Title>
+          </Header1>
         </Link>
         <MenuImage
           onClick={() => {
-            setIsMenuOpened(1 - isMenuOpened)
+            setIsMenuOpened(!isMenuOpened)
           }}
         >
           메뉴 이미지
@@ -38,5 +39,30 @@ const Header = () => {
     </>
   )
 }
+
+const HeaderMenu = styled(Detail)`
+  &:hover {
+    color: var(--brand-600);
+    font-size: 1.7rem;
+  }
+`
+
+const MenuWrap = styled(Wrap)<{ open?: boolean }>`
+  @media (max-width: 825px) {
+    display: ${(p) => (p.open ? '' : 'none')};
+    width: 6.25rem;
+    gap: 20px;
+    margin-top: 30px;
+  }
+`
+
+const MenuImage = styled.div`
+  display: none;
+  @media (max-width: 825px) {
+    display: inline-block;
+    position: absolute;
+    right: 6.25rem;
+  }
+`
 
 export default Header

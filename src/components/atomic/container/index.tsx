@@ -26,12 +26,3 @@ export const Blank = styled.div<widthAndHeight>`
   width: ${(p) => p.width && p.width};
   height: ${(p) => p.height && p.height};
 `
-
-export const MenuWrap = styled(Wrap)<{ open?: number }>`
-  @media (max-width: 825px) {
-    display: ${(p) => (p.open == 0 ? 'none' : '')};
-    width: 6.25rem;
-    gap: 20px;
-    margin-top: 30px;
-  }
-`
