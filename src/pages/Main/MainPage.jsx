@@ -12,7 +12,9 @@ const mainCss = {
   container : {
     display: 'flex',
     justifyContent: 'center',
-    padding: '10rem'
+    padding: '2rem 5rem',
+    flexDirection: 'Column',
+    gap: '13.75rem'
   },
   slogansns : {
     display: 'flex',
@@ -35,10 +37,36 @@ const mainCss = {
     color: 'white',
     fontSize: '4rem',
     fontWeight: '700',
-    bottom: '6rem',
+    bottom: '15rem',
     left: '8rem'
+  },
+  message: {
+    background: 'var(--gray-0)',
+    border: '1px solid var(--gray-100)',
+    borderRadius: '5rem',
+    fontSize: '6rem',
+    textAlign: 'center',
+    fontWeight: '600',
+    padding: '8rem 0',
+    margin: '0 3rem'
+  },
+  blue: {
+    color: 'var(--brand-500)'
   }
 }
+
+function messageBar(n) {
+  return {
+    width: `${n / 16}rem`,
+    height: '0.7rem',
+    background: 'black',
+    display: 'inline-block',
+    position: 'relative',
+    bottom: '1.5rem'
+  }
+}
+
+console.log(messageBar(260))
 
 export default function MainPage() {
   return (
@@ -53,14 +81,17 @@ export default function MainPage() {
           <img src={instagram} style={mainCss.img} alt="No image" />
         </div>
       </div>
-      <div>
-
+      <div style={mainCss.message}>
+        YOUR <span style={messageBar(244)}></span> <span style={mainCss.blue}>(IM)</span>PACT <br></br>
+        <span style={mainCss.blue}>(P)</span>ASSION <span style={messageBar(96)}></span> <span style={mainCss.blue}>(L)</span>EARN <span style={messageBar(132)}></span> <br></br>
+        FUT<span style={mainCss.blue}>(U)</span>RE <span style={messageBar(188)}></span> <span style={mainCss.blue}>(D)</span>REAM <br></br>
+        <span style={messageBar(114)}></span> POTENTIAL <span style={messageBar(62)}></span> T<span style={mainCss.blue}>(E)</span>AM
       </div>
       <div>
 
       </div>
       <div>
-
+        
       </div>
     </div>
   )

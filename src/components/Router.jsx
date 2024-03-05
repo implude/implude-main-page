@@ -16,7 +16,7 @@ const Layout = () => {
   return (
     <>
       <Header />  
-      {(useLocation().pathname != ('/' && '/recruit')) ? <HeaderBanner /> : <></>}
+      {(useLocation().pathname != '/' && useLocation().pathname != '/recruit') ? <HeaderBanner /> : <></>}
       <Outlet />
       <Footer />
     </>
