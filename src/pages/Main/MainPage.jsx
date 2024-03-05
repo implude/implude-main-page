@@ -1,7 +1,7 @@
 export default function MainPage() {
   return (
     <div>
-      <h1>메인페이지</h1>
+      서혀니 개발중
     </div>
   )
 }
