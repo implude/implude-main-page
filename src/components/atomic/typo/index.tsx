@@ -16,21 +16,37 @@ const TypoRef = styled.div<TypoType>`
 `
 
 export const Title = styled(TypoRef)`
-  font-size: 32px;
+  font-size: 2rem;
   font-style: normal;
   font-weight: ${(p) => (p.$bold ? '900' : '800')};
-  line-height: 40px;
+  line-height: 2.5rem;
 `
 
 export const Header1 = styled(TypoRef)`
-  font-size: 24px;
+  font-size: 1.5rem;
   font-style: normal;
   font-weight: ${(p) => (p.$bold ? '700' : '500')};
-  line-height: 36px;
+  line-height: 2.25rem;
 `
+
+export const HeaderMenu = styled(Header1)`
+  @media (max-width: 825px) {
+    
+  }
+`
+
+export const MenuImage = styled.div`
+  display: none;
+  @media (max-width: 825px) {
+    display: inline-block;
+    position: absolute;
+    right: 6.25rem;
+  }
+`
+
 export const Description = styled(TypoRef)`
-  font-size: 14px;
+  font-size: 0.875rem;
   font-style: normal;
   font-weight: 600;
-  line-height: 36px;
+  line-height: 2.25rem;
 `

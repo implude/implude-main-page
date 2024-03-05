@@ -1,22 +1,28 @@
-import React from 'react'
-import { Header1, Row, Title } from './atomic'
+import React, { useState } from 'react'
+import { Header1, Row, Title, Wrap, HeaderMenu, MenuWrap, MenuImage } from './atomic'
 import { Link } from 'react-router-dom'
 
 const Header = () => {
+  const [isMenuOpened, setisMenuOpened] = useState(0)
+
   return (
     <>
-      <Row style={{ padding: '1rem 6rem' }} gap={'4rem'} justify="space-between">
-      <Link to="/">
-          <Title color="--gray-900" $bold>
-            #IMPLUDE
-          </Title>
+      <Row style={{ padding: '0.75rem 4.438rem' }} gap={'3.25rem'} justify="space-between">
+        <Link to="/">
+        <Title color="--gray-900" $bold>
+          #IMPLUDE
+        </Title>
         </Link>
-        <Row gap={'4rem'} align="center">
-          <Link to="/history"><Header1 color="--gray-700">역사</Header1></Link>
-          <Link to="/vision"><Header1 color="--gray-700">핵심가치</Header1></Link>
-          <Link to="/projects"><Header1 color="--gray-700">프로젝트</Header1></Link>
-          <Link to="/recruit"><Header1 color="--gray-700">팀원 모집</Header1></Link>
-        </Row>
+        <MenuImage onClick={() => {setisMenuOpened(1 - isMenuOpened);}}>
+          {/* <img src=""/> */}
+          메뉴 이미지
+        </MenuImage>
+        <MenuWrap gap={'3.25rem'} align="center" open={isMenuOpened}>
+          <Link to="/history"><HeaderMenu color="--gray-700">역사</HeaderMenu></Link>
+          <Link to="/vision"><HeaderMenu color="--gray-700">핵심가치</HeaderMenu></Link>
+          <Link to="/projects"><HeaderMenu color="--gray-700">프로젝트</HeaderMenu></Link>
+          <Link to="/recruit"><HeaderMenu color="--gray-700">팀원 모집</HeaderMenu></Link>
+        </MenuWrap>
       </Row>
     </>
   )

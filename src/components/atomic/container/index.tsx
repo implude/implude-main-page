@@ -9,8 +9,6 @@ export const Row = styled.div<rowColTypes>`
   ${(props) => props.justify && `justify-content: ${props.justify};`}
   ${(props) => props.align && `align-items: ${props.align};`}
   ${(props) => props.gap && `gap: ${props.gap};`}
-  ${(props) => props.padding && `padding: ${props.padding}`}
-  ${(props) => props.margin && `margin: ${props.margin}`}
 `
 
 export const Col = styled(Row)`
@@ -25,4 +23,13 @@ export const Wrap = styled(Row)`
 export const Blank = styled.div<widthAndHeight>`
   width: ${(p) => p.width && p.width};
   height: ${(p) => p.height && p.height};
+`
+
+export const MenuWrap = styled(Wrap)<{open?: number}>`
+  @media (max-width: 825px) {
+    display: ${(p) => p.open == 0 ? 'none' : ''};
+    width: 6.25rem;
+    gap: 20px;
+    margin-top: 30px;
+  }
 `
