@@ -26,7 +26,7 @@ const Layout = () => {
 export default function Router() {
   return (
     <BrowserRouter>
-      <nav>
+      {/* <nav>
         <NavLink className={({ isActive }) => 'nav-link' + (isActive ? ' click' : '')} to="/">
           MainPage
         </NavLink>
@@ -42,7 +42,7 @@ export default function Router() {
         <NavLink className={({ isActive }) => 'nav-link' + (isActive ? ' click' : '')} to="/recruit">
           RecruitPage
         </NavLink>
-      </nav>
+      </nav> */}
 
       <Routes>
         <Route element={<Layout />}>
