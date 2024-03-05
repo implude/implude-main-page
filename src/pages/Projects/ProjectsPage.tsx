@@ -11,9 +11,9 @@ export default function ProjectsPage() {
   return (
     <>
       <Outlet />
-      <Col align="center" gap={'120px'} width={'1700px'} margin={'220px auto'}>
+      <Col align="center" gap={'10rem'} width={'100%'} margin={'18rem auto'}>
         <Title color={'--gray-black'}>{id !== undefined ? '다른 프로젝트 둘러보기' : '진행한 프로젝트'}</Title>
-        <Wrap gap={'58px'} justify="center">
+        <Wrap gap={'3rem'} justify="center">
           {[...projects].reverse().map((project) => {
             return (
               <>
@@ -26,7 +26,7 @@ export default function ProjectsPage() {
             )
           })}
           {[...Array(((projects.length - Number(Boolean(id))) * 2) % 3)].map(() => (
-            <EmptyProjectImg height={'297px'} width={'528px'} justify="center" align="center">
+            <EmptyProjectImg height={'18rem'} width={'33rem'} justify="center" align="center">
               <Implude />
             </EmptyProjectImg>
           ))}
@@ -37,10 +37,10 @@ export default function ProjectsPage() {
 }
 
 const ProjectImg = styled.img`
-  height: 297px;
-  border-radius: 24px;
+  height: 18rem;
+  border-radius: 2rem;
 `
 const EmptyProjectImg = styled(Row)`
   background: var(--gray-100);
-  border-radius: 24px;
+  border-radius: 2rem;
 `

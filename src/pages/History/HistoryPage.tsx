@@ -34,8 +34,8 @@ export default function HistoryPage() {
     },
   ]
   return (
-    <Col gap="220px" style={{ padding: '220px' }}>
-      <Col gap={'120px'}>
+    <Col gap="18rem" style={{ padding: '18rem' }}>
+      <Col gap={'10rem'}>
         <Row justify="center">
           <IntroText color={'--gray-black'}>
             <span>임플루드</span>는 오늘도
@@ -44,11 +44,11 @@ export default function HistoryPage() {
           </IntroText>
         </Row>
         <Row justify="center">
-          <Row gap={'100px'}>
-            <YearContainer gap={'74px'}>
+          <Row gap={'8rem'}>
+            <YearContainer gap={'6rem'}>
               {[...Array(9)].map((v, i) => (
                 <>
-                  <Row width="120px" justify="space-between">
+                  <Row width="10rem" justify="space-between">
                     <Year
                       hover={{ color: '--gray-black' }}
                       enabled={2023 - i === activated}
@@ -61,7 +61,7 @@ export default function HistoryPage() {
                 </>
               ))}
             </YearContainer>
-            <HistoryContainer gap={'100px'}>
+            <HistoryContainer gap={'6rem'}>
               {data.map((v, i) => (
                 <HistoryBlock onClick={() => setActivated(2023 - i)}>
                   <Header1 $bold color={'--gray-400'}>
@@ -77,12 +77,12 @@ export default function HistoryPage() {
         </Row>
       </Col>
 
-      <Col gap={'120px'}>
+      <Col gap={'10rem'}>
         <IntroText color={'--gray-black'}>언론 속의 임플루드</IntroText>
-        <Col gap={'60px'} style={{ padding: '0 120px' }}>
+        <Col gap={'5rem'} style={{ padding: '0 10rem' }}>
           <Link to="https://www.hankyung.com/society/article/2020072102397">
-            <Col gap={'24px'} style={{ padding: '10px' }}>
-              <Row gap={'32px'} align="center">
+            <Col gap={'2rem'} style={{ padding: '1rem' }}>
+              <Row gap={'3rem'} align="center">
                 <Header1 $bold color={'--brand-600'}>
                   한국 경제
                 </Header1>
@@ -94,8 +94,8 @@ export default function HistoryPage() {
             </Col>
           </Link>
           <Link to="https://game.donga.com/105214/">
-            <Col gap={'24px'} style={{ padding: '10px' }}>
-              <Row gap={'32px'} align="center">
+            <Col gap={'2rem'} style={{ padding: '1rem' }}>
+              <Row gap={'3rem'} align="center">
                 <Header1 $bold color={'--brand-600'}>
                   게임 동아
                 </Header1>
@@ -123,12 +123,12 @@ const IntroText = styled(Title)`
 const YearContainer = styled(Col)`
   &::after {
     content: '';
-    width: 3px;
-    height: 910px;
+    width: 0.25rem;
+    height: 56rem;
     position: absolute;
     background: var(--gray-200);
 
-    transform: translate(110px, 20px);
+    transform: translate(10rem, 1.5rem);
   }
 `
 const Year = styled(Title)<{ enabled: boolean }>`
@@ -137,22 +137,22 @@ const Year = styled(Title)<{ enabled: boolean }>`
 `
 const YearCircle = styled.div<{ enabled: boolean }>`
   z-index: 1;
-  border-radius: 20px;
+  border-radius: 1.5rem;
   ${(p) =>
     p.enabled
       ? css`
-          width: 20px;
-          height: 20px;
+          width: 1.5rem;
+          height: 1.5rem;
 
           background: white;
-          border: 4px solid var(--brand-600);
-          transform: translate(1.5px, 10px);
+          border: 0.25rem solid var(--brand-600);
+          transform: translate(0.1rem, 1rem);
         `
       : css`
-          width: 15px;
-          height: 15px;
+          width: 1rem;
+          height: 1rem;
           background: var(--gray-200);
-          transform: translate(-1px, 10px);
+          transform: translate(-0.08rem, 1rem);
         `}
 `
 const HistoryContainer = styled(Col)``

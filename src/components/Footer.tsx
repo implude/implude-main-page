@@ -10,8 +10,8 @@ const Footer = () => {
   return (
     <>
       <Container>
-        <Wrap justify="space-between" gap="32px">
-          <Wrap gap={'15px'} align="center">
+        <Wrap justify="space-between" gap="2rem">
+          <Wrap gap={'1rem'} align="center">
             <Implude />
             <Col align="start">
               <Title color="--gray-white" $bold>
@@ -20,7 +20,7 @@ const Footer = () => {
               <Header1 color="--gray-white">IMPORT + INCLUDE</Header1>
             </Col>
           </Wrap>
-          <Row gap={'32px'}>
+          <Row gap={'2rem'}>
             <Link to={'https://www.youtube.com/@implude_official/featured'} style={{ cursor: 'pointer' }}>
               <Youtube />
             </Link>
@@ -46,8 +46,8 @@ const Footer = () => {
 const Container = styled(Col)`
   width: 100%;
   background-color: var(--gray-black);
-  padding: 40px 80px;
-  gap: 45px;
+  padding: 4rem 8rem;
+  gap: 4.5rem;
 
   div {
     user-select: text;
