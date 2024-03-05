@@ -8,14 +8,10 @@ export default function VisionPage() {
 
   const Ver1 = () => {
     setRendComponent(<OldVision />)
-    HeadColV1 = '--black'
-    HeadColV2 = '--gray-400'
   }
 
   const Ver2 = () => {
     setRendComponent(<NewVision />)
-    HeadColV1 = '--gray-400'
-    HeadColV2 = '--black'
   }
 
   return (
@@ -25,10 +21,20 @@ export default function VisionPage() {
           <Title color="--black">비전</Title>
           <Col gap="0.625rem">
             <Row justify="right" gap="5.375rem">
-              <Header1 color={HeadColV1} $bold onClick={Ver1}>
+              <Header1
+                activated={RendComponent.type.name === 'OldVision'}
+                hover={{ color: '--gray-black' }}
+                $bold
+                onClick={Ver1}
+              >
                 임플루드 비전 1.0
               </Header1>
-              <Header1 color={HeadColV2} $bold onClick={Ver2}>
+              <Header1
+                activated={RendComponent.type.name === 'NewVision'}
+                hover={{ color: '--gray-black' }}
+                $bold
+                onClick={Ver2}
+              >
                 임플루드 비전 2.0
               </Header1>
             </Row>

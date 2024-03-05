@@ -27,11 +27,12 @@ export const Header1 = styled(TypoRef)`
   font-style: normal;
   font-weight: ${(p) => (p.$bold ? '700' : '500')};
   line-height: 2.25rem;
+
+  color: ${(p) => p.activated && 'var(--gray-black)'};
 `
 
 export const HeaderMenu = styled(Header1)`
   @media (max-width: 825px) {
-    
   }
 `
 
