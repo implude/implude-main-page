@@ -7,29 +7,14 @@ import { imageFolderPath, projects } from './ProjectData.json'
 
 export default function ProjectsPage() {
   const { id } = useParams()
-  const thumbnailFolderPath = './src/assets/ProjectThumbnail/'
-  const thumbnailNames = [
-    'JipGaGoSipDa.jpg',
-    'DAYCUBE.jpg',
-    'MOLA.jpg',
-    'JOIN.jpg',
-    'DINEON.jpg',
-    'ITNun.jpg',
-    'ASD.jpg',
-    'Yummy.jpg',
-    'MK1.jpg',
-    'VOAH.jpg',
-  ]
 
-  console.log(projects)
   return (
     <>
       <Outlet />
       <Col align="center" gap={'120px'} width={'1700px'} margin={'220px auto'}>
         <Title color={'--gray-black'}>{id !== undefined ? '다른 프로젝트 둘러보기' : '진행한 프로젝트'}</Title>
         <Wrap gap={'58px'} justify="center">
-          {projects.reverse().map((project, i) => {
-            console.log(project, project.id)
+          {[...projects].reverse().map((project) => {
             return (
               <>
                 {String(project.id) !== id && (

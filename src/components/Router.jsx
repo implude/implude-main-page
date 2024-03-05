@@ -27,7 +27,6 @@ export default function Router() {
   return (
     <BrowserRouter>
       <nav>
-        {/* class에 함수 넣는거 수정해야 함 */}
         <NavLink className={({ isActive }) => 'nav-link' + (isActive ? ' click' : '')} to="/">
           MainPage
         </NavLink>
