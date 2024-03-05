@@ -28,7 +28,7 @@ export const Blank = styled.div<widthAndHeight>`
 export const MenuWrap = styled(Wrap)<{open?: number}>`
   @media (max-width: 825px) {
     display: ${(p) => p.open == 0 ? 'none' : ''};
-    width: 100px;
+    width: 6.25rem;
     gap: 20px;
     margin-top: 30px;
   }
