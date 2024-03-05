@@ -18,7 +18,8 @@ const mainCss = {
   },
   slogansns : {
     display: 'flex',
-    gap: '2.5rem'
+    gap: '2.5rem',
+    width: '90vw'
   },
   slogan: {
     flexGrow: '2'
