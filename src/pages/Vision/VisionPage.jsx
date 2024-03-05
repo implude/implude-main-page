@@ -1,21 +1,19 @@
 import { useState } from 'react'
 import { Blank, Col, Description, Header1, Row, Title } from '../../components/atomic'
+import './VisionPage.css'
 
 export default function VisionPage() {
   const [RendComponent, setRendComponent] = useState(<OldVision />)
-  let HeadColV1 = '--black'
-  let HeadColV2 = '--gray-400'
+  const [Version, SetVersion] = useState(0)
 
   const Ver1 = () => {
     setRendComponent(<OldVision />)
-    HeadColV1 = '--black'
-    HeadColV2 = '--gray-400'
+    SetVersion(0)
   }
 
   const Ver2 = () => {
     setRendComponent(<NewVision />)
-    HeadColV1 = '--gray-400'
-    HeadColV2 = '--black'
+    SetVersion(1)
   }
 
   return (
@@ -25,10 +23,10 @@ export default function VisionPage() {
           <Title color="--black">비전</Title>
           <Col gap="0.625rem">
             <Row justify="right" gap="5.375rem">
-              <Header1 color={HeadColV1} $bold onClick={Ver1}>
+              <Header1 color={Version == 0 ? '--black' : '--gray-400'} $bold onClick={Ver1}>
                 임플루드 비전 1.0
               </Header1>
-              <Header1 color={HeadColV2} $bold onClick={Ver2}>
+              <Header1 color={Version == 0 ? '--gray-400' : '--black'} $bold onClick={Ver2}>
                 임플루드 비전 2.0
               </Header1>
             </Row>
@@ -89,7 +87,8 @@ export default function VisionPage() {
                 입니다. 실패를 통한 깨달음과 성장만 있을 뿐, 실패는
                 <br />
                 두려운 존재가 아닙니다.
-                <br />.
+                <br />
+                <br />
               </Description>
             </div>
             <div>
@@ -146,7 +145,7 @@ export default function VisionPage() {
               아이디어를 가진 인재가 세상을 바꾼다고 믿습니다.
               <br />
               <br />
-              ps. MBTI가 N일 필요는 없습니다.
+              ps. MBTI가 N일 필요는 없습니다 :&#41;
             </Description>
           </div>
         </Col>
@@ -157,7 +156,8 @@ export default function VisionPage() {
             </Header1>
             <Description color="--black">
               열정은 불가능을 가능하게 만드는 힘이 있습니다. <br />
-              임플루드 부원들은 활활 타오르는 열정을 가지고 있습니다. <br />.
+              임플루드 부원들은 활활 타오르는 열정을 가지고 있습니다. <br />
+              <br />
             </Description>
           </div>
           <div>
@@ -181,7 +181,9 @@ const OldVision = () => {
       <Row justify="center">
         <Blank width="25rem" height="1.25rem" />
         <Col gap="5rem">
-          <Title color="--black">상상하는 대로 만들어라</Title>
+          <Title className="Thinking" color="--black" style={{ fontSize: '3rem' }}>
+            &quot;상상하는 대로 만들어라&quot;
+          </Title>
           <Description color="--black">
             2015년부터 2023년까지 임플루드는 “상상하는 대로 만들어라” 를 모토로, 많은 상상
             <br />
@@ -200,7 +202,11 @@ const NewVision = () => {
       <Row justify="center">
         <Blank width="25rem" height="1.25rem" />
         <Col>
-          <div style={{ width: '37.8125rem', height: '16.5rem', backgroundColor: 'blue' }}>AA</div>
+          <img
+            src="src/assets/VisionThumbnail/Vision2.jpg"
+            style={{ width: '37.8125rem', height: '16.5rem' }}
+            alt="dd"
+          />
           <Blank height="5rem" />
           <Description color="--black">
             우리가 사용하는 평범하고도 대단한 많은 것들은 처음엔 누군가의 상상에 의해 만들어졌
