@@ -2,7 +2,7 @@ import React from 'react'
 import { BrowserRouter, Routes, Route, NavLink, Outlet, useLocation } from 'react-router-dom'
 
 import MainPage from '../pages/Main/MainPage'
-import HistoryPage from '../pages/History/HistoryPage.tsx'
+import HistoryPage from '../pages/History/HistoryPage'
 import VisionPage from '../pages/Vision/VisionPage'
 import ProjectsPage from '../pages/Projects/ProjectsPage'
 import ProjectPage from '../pages/Projects/ProjectPage'
@@ -15,8 +15,8 @@ import HeaderBanner from '../components/HeaderBanner'
 const Layout = () => {
   return (
     <>
-      <Header />  
-      {(useLocation().pathname != '/') ? <HeaderBanner /> : <></>}
+      <Header />
+      {useLocation().pathname != '/' ? <HeaderBanner /> : <></>}
       <Outlet />
       <Footer />
     </>
