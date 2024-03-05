@@ -5,7 +5,7 @@ import styled, { css } from 'styled-components'
 import { Blank, Col, Description, Header1, Row, Title } from '../../components/atomic'
 
 export default function HistoryPage() {
-  const [activated, setActivated] = useState<number>(2023)
+  const [activated, setActivated] = useState(2023)
 
   const data = [
     [
@@ -196,7 +196,7 @@ export default function HistoryPage() {
     ],
   ]
   return (
-    <Col gap="18rem" style={{ padding: '18rem' }}>
+    <Col gap="18rem" style={{ width: '100%' }}>
       <Col gap={'10rem'}>
         <Row justify="center">
           <IntroText color={'--gray-black'}>
@@ -224,7 +224,7 @@ export default function HistoryPage() {
               ))}
             </YearContainer>
             <HistoryContainer gap={'6rem'}>
-              {data[2031 - activated].map((v, i) => (
+              {data[2023 - activated].map((v, i) => (
                 <HistoryBlock onClick={() => setActivated(2023 - i)}>
                   <Header1 $bold color={'--gray-400'}>
                     {v.date}
@@ -252,7 +252,9 @@ export default function HistoryPage() {
                   2020.07.21
                 </Header1>
               </Row>
-              <Title color={'--gray-black'}>[스타트업 플러스] 창업은 시작이 반... "상상하는 대로 만들어라"</Title>
+              <Header1 $bold style={{ overflow: 'hidden', textOverflow: 'ellipsis' }} color={'--gray-black'}>
+                [스타트업 플러스] 창업은 시작이 반... "상상하는 대로 만들어라"
+              </Header1>
             </Col>
           </Link>
           <Link to="https://game.donga.com/105214/">
@@ -265,9 +267,9 @@ export default function HistoryPage() {
                   2020.07.21
                 </Header1>
               </Row>
-              <Title color={'--gray-black'}>
+              <Header1 $bold style={{ overflow: 'hidden', textOverflow: 'ellipsis' }} color={'--gray-black'}>
                 [STAC2022] 미래산업 부문 대상 'ASD' "AI를 통한 더 좋은 공부 방법을 소개해요"
-              </Title>
+              </Header1>
             </Col>
           </Link>
         </Col>
@@ -286,18 +288,18 @@ const YearContainer = styled(Col)`
   &::after {
     content: '';
     width: 0.25rem;
-    height: 56rem;
+    height: 68rem;
     position: absolute;
     background: var(--gray-200);
 
-    transform: translate(10rem, 1.5rem);
+    transform: translate(9.3rem, 1.5rem);
   }
 `
-const Year = styled(Title)<{ enabled: boolean }>`
+const Year = styled(Title)`
   color: ${(p) => (p.enabled ? 'var(--gray-black)' : 'var(--gray-200)')};
   transition: all 0.3s ease-in-out;
 `
-const YearCircle = styled.div<{ enabled: boolean }>`
+const YearCircle = styled.div`
   z-index: 1;
   border-radius: 1.5rem;
   ${(p) =>
