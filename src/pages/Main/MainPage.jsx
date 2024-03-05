@@ -22,30 +22,33 @@ const mainCss = {
     width: '90vw'
   },
   slogan: {
-    flexGrow: '2'
+    flexGrow: '2',
+    position: 'relative'
   },
   sns: {
     flexGrow: '1',
     display: 'flex',
     flexDirection: 'Column',
-    gap: '2.5rem'
+    gap: '2.5rem',
   },
   img: {
-    borderRadius: '2rem'
+    borderRadius: '30px',
+    width: '100%'
   },
   sloganMent: {
-    position: 'absolute',
     color: 'white',
-    fontSize: '4rem',
+    fontSize: '3.3vw',
     fontWeight: '700',
-    bottom: '15rem',
-    left: '8rem'
+    position: 'relative',
+    top: '67.5%',
+    left: '7%',
+    height: '0'
   },
   message: {
     background: 'var(--gray-0)',
     border: '1px solid var(--gray-100)',
-    borderRadius: '5rem',
-    fontSize: '6rem',
+    borderRadius: '20px',
+    fontSize: '5vw',
     textAlign: 'center',
     fontWeight: '600',
     padding: '8rem 0',
@@ -59,11 +62,11 @@ const mainCss = {
 function messageBar(n) {
   return {
     width: `${n / 16}rem`,
-    height: '0.7rem',
+    height: '0.5vw',
     background: 'black',
     display: 'inline-block',
     position: 'relative',
-    bottom: '1.5rem'
+    bottom: '1.5vw'
   }
 }
 
