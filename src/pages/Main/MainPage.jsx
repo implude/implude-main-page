@@ -6,16 +6,10 @@ import { Blank, Col, Description, Header1, Row, Title } from '../../components/a
 
 export default function MainPage() {
   return (
-    <Wrapper>
-      <Row gap='100%'>
-        <div>예아</div>
-        <Col>
-          <div>히</div>
-          <div>호</div>
-        </Col>
-      </Row>
-    </Wrapper>
+    <div>
+      서혀니 개발중
+    </div>
   )
 
-  
+
 }
