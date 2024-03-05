@@ -28,6 +28,22 @@ export const Header1 = styled(TypoRef)`
   font-weight: ${(p) => (p.$bold ? '700' : '500')};
   line-height: 36px;
 `
+
+export const HeaderMenu = styled(Header1)`
+  @media (max-width: 825px) {
+    
+  }
+`
+
+export const MenuImage = styled.div`
+  display: none;
+  @media (max-width: 825px) {
+    display: inline-block;
+    position: absolute;
+    right: 100px;
+  }
+`
+
 export const Description = styled(TypoRef)`
   font-size: 14px;
   font-style: normal;
