@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter, Routes, Route, NavLink, Outlet } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, NavLink, Outlet, useLocation } from 'react-router-dom'
 
 import MainPage from '../pages/Main/MainPage'
 import HistoryPage from '../pages/History/HistoryPage.tsx'
@@ -15,8 +15,8 @@ import HeaderBanner from '../components/HeaderBanner'
 const Layout = () => {
   return (
     <>
-      <Header />
-      <HeaderBanner />
+      <Header />  
+      {(useLocation().pathname != '/') ? <HeaderBanner /> : <></>}
       <Outlet />
       <Footer />
     </>
@@ -26,24 +26,6 @@ const Layout = () => {
 export default function Router() {
   return (
     <BrowserRouter>
-      {/* <nav>
-        <NavLink className={({ isActive }) => 'nav-link' + (isActive ? ' click' : '')} to="/">
-          MainPage
-        </NavLink>
-        <NavLink className={({ isActive }) => 'nav-link' + (isActive ? ' click' : '')} to="/history">
-          HistoryPage
-        </NavLink>
-        <NavLink className={({ isActive }) => 'nav-link' + (isActive ? ' click' : '')} to="/vision">
-          VisionPage
-        </NavLink>
-        <NavLink className={({ isActive }) => 'nav-link' + (isActive ? ' click' : '')} to="/projects">
-          ProjectsPage
-        </NavLink>
-        <NavLink className={({ isActive }) => 'nav-link' + (isActive ? ' click' : '')} to="/recruit">
-          RecruitPage
-        </NavLink>
-      </nav> */}
-
       <Routes>
         <Route element={<Layout />}>
           <Route path="/" element={<MainPage />} />
