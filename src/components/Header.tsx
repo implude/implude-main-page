@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Header1, Row, Title, Wrap, HeaderMenu, MenuWrap, MenuImage } from './atomic'
 
 const Header = () => {
-  const [isMenuOpened, setisMenuOpened] = useState(0)
+  const [isMenuOpened, setIsMenuOpened] = useState(0)
 
   return (
     <>
@@ -10,7 +10,11 @@ const Header = () => {
         <Title color="--gray-900" $bold>
           #IMPLUDE
         </Title>
-        <MenuImage onClick={() => {setisMenuOpened(1 - isMenuOpened);}}>
+        <MenuImage
+          onClick={() => {
+            setIsMenuOpened(1 - isMenuOpened)
+          }}
+        >
           {/* <img src=""/> */}
           메뉴 이미지
         </MenuImage>
