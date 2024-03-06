@@ -48,7 +48,7 @@ const HeaderMenu = styled(Detail)`
 `
 
 const MenuWrap = styled(Wrap)<{ open?: boolean }>`
-  @media (max-width: 825px) {
+  @media (max-width: 890px) {
     display: ${(p) => (p.open ? '' : 'none')};
     width: 6.25rem;
     gap: 20px;
@@ -58,7 +58,7 @@ const MenuWrap = styled(Wrap)<{ open?: boolean }>`
 
 const MenuImage = styled.div`
   display: none;
-  @media (max-width: 825px) {
+  @media (max-width: 890px) {
     display: inline-block;
     position: absolute;
     right: 6.25rem;
