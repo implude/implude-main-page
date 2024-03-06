@@ -11,25 +11,22 @@ export default function ProjectsPage() {
   return (
     <>
       <Outlet />
-      <Container align="center" gap={'7.5rem'} width={'106.25rem'} margin={'13.75rem auto'}>
-        <Title color={'--gray-black'}>{id !== undefined ? '다른 프로젝트 둘러보기' : '진행한 프로젝트'}</Title>
-        <Wrap gap={'3.625rem'} justify="center">
+      <Container align="center" width={'100%'} margin={'13.75rem auto'}>
+        <Title color={'--gray-black'} style={{ margin: ' 0 8.5rem 8.5rem', transition: 'none' }}>
+          {id !== undefined ? '다른 프로젝트 둘러보기' : '진행한 프로젝트'}
+        </Title>
+        <Wrap justify="center" padding={'0 0 0 3.625rem'}>
           {[...projects].reverse().map((project) => {
             return (
               <>
                 {String(project.id) !== id && (
-                  <Link to={'/projects/' + project.id} style={{ cursor: 'pointer' }}>
+                  <Link to={'/projects/' + project.id} style={{ cursor: 'pointer', margin: '0 3.625rem 3.625rem 0' }}>
                     <ProjectImg src={imageFolderPath + project.imageUrl[0]} alt={project.title} />
                   </Link>
                 )}
               </>
             )
           })}
-          {[...Array(((projects.length - Number(Boolean(id))) * 2) % 3)].map(() => (
-            <EmptyProjectImg height={'18.563rem'} width={'33rem'} justify="center" align="center">
-              <Implude />
-            </EmptyProjectImg>
-          ))}
         </Wrap>
       </Container>
     </>
@@ -37,14 +34,13 @@ export default function ProjectsPage() {
 }
 
 const Container = styled(Col)`
-  @media (max-width: 1800px) {
-    width: 100%;
-    padding: 0 1rem;
-  }
+  width: calc(100%-7.25rem);
+  paddingleft: '3.625rem';
+  max-width: 1758px;
 `
 
 const ProjectImg = styled.img`
-  height: 18.563rem;
+  max-width: 33rem;
   border-radius: 1.5rem;
 `
 const EmptyProjectImg = styled(Row)`
