@@ -369,4 +369,3 @@ function Part({ title, descriptions }) {
       </Col>
     </Col>
   )
-}
