@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import styled from 'styled-components'
 import { Header1, Row, Title, Wrap, Detail } from './atomic'
 import { Link } from 'react-router-dom'
+import { Menu } from 'lucide-react'
 
 const Header = () => {
   const [isMenuOpened, setIsMenuOpened] = useState(false)
@@ -19,7 +20,7 @@ const Header = () => {
             setIsMenuOpened(!isMenuOpened)
           }}
         >
-          메뉴 이미지
+          <Menu />
         </MenuImage>
         <MenuWrap gap={'3.25rem'} align="center" open={isMenuOpened}>
           <Link to="/history">
@@ -48,20 +49,29 @@ const HeaderMenu = styled(Detail)`
 `
 
 const MenuWrap = styled(Wrap)<{ open?: boolean }>`
-  @media (max-width: 890px) {
+  @media (max-width: 538px) {
     display: ${(p) => (p.open ? '' : 'none')};
     width: 6.25rem;
     gap: 20px;
     margin-top: 3rem;
+    margin-bottom: 1rem;
   }
 `
 
 const MenuImage = styled.div`
   display: none;
-  @media (max-width: 890px) {
+  @media (max-width: 538px) {
     display: inline-block;
     position: relative;
-    top: 0.7rem;
+    top: 0.4rem;
+    width: 50%;
+    text-align: right;
+  }
+  @media (max-width: 347px) {
+    display: inline-block;
+    position; relative;
+    top: 0.4rem;
+    width: 6rem;
   }
 `
 
