@@ -75,3 +75,16 @@ export const RecruitText = styled(TypoRef)<{ highlight?: Boolean; $bold?: Boolea
   }
   line-height: 167%;
 `
+
+export const RecruitText = styled(TypoRef)<{ highlight?: Boolean; $bold?: Boolean }>`
+  font-size: ${(p) => (p.highlight ? '2.5rem' : '2.25rem')};
+  font-weight: ${(p) => (p.highlight ? '700' : '500')};
+  font-weight: ${(p) => (p.$bold ? '700' : '500')};
+  font-style: normal;
+  text-wrap: wrap;
+  li {
+    text-indent: -3rem;
+    margin-left: 3rem;
+  }
+  line-height: 167%;
+`
