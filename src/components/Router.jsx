@@ -15,8 +15,8 @@ import HeaderBanner from '../components/HeaderBanner'
 const Layout = () => {
   return (
     <>
-      <Header />
-      {useLocation().pathname != '/' && useLocation().pathname != '/recruit' ? <HeaderBanner /> : <></>}
+      <Header />  
+      {(useLocation().pathname != '/' && useLocation().pathname != '/recruit') ? <HeaderBanner /> : <></>}
       <Outlet />
       <Footer />
     </>
