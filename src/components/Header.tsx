@@ -9,7 +9,7 @@ const Header = () => {
 
   return (
     <>
-      <Row style={{ padding: '0.75rem 2.438rem', flexWrap: 'wrap', gap: '1rem' }} gap={'3.25rem'} justify="space-between" align="start">
+      <Row style={{ padding: '0.75rem 2.438rem', flexWrap: 'wrap', gap: '1rem' }} gap={'3.25rem'} justify="space-between" align="center">
         <Link to="/">
           <Header1 color="--gray-900" $bold>
             #IMPLUDE
