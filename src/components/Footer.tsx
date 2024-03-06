@@ -14,9 +14,9 @@ const Footer = () => {
           <Wrap gap={'1rem'} align="center">
             <Implude />
             <Col align="start">
-              <Header2 color="--gray-white" $bold>
+              <Title color="--gray-white" $bold>
                 #IMPLUDE
-              </Header2>
+              </Title>
               <Wrap gap="0.5rem">
                 <Detail color="--gray-white">IMPORT </Detail> <Detail color="--gray-white"> + INCLUDE</Detail>
               </Wrap>
