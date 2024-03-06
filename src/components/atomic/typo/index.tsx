@@ -16,21 +16,35 @@ const TypoRef = styled.div<TypoType>`
 `
 
 export const Title = styled(TypoRef)`
-  font-size: 32px;
+  font-size: 2rem;
   font-style: normal;
   font-weight: ${(p) => (p.$bold ? '900' : '800')};
-  line-height: 40px;
+  line-height: 2.5rem;
 `
 
 export const Header1 = styled(TypoRef)`
-  font-size: 24px;
+  font-size: 1.5rem;
   font-style: normal;
   font-weight: ${(p) => (p.$bold ? '700' : '500')};
-  line-height: 36px;
+  line-height: 2.25rem;
+
+  color: ${(p) => p.activated && 'var(--gray-black)'};
 `
+
+export const Header2 = styled(TypoRef)`
+  font-size: 2.375rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 2.813rem;
+`
+
 export const Description = styled(TypoRef)`
-  font-size: 14px;
+  font-size: 0.875rem;
+`
+
+export const Detail = styled(TypoRef)`
+  font-size: 1.5rem;
   font-style: normal;
   font-weight: 600;
-  line-height: 36px;
+  line-height: 2.25rem;
 `
