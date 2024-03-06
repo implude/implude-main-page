@@ -9,7 +9,7 @@ const Header = () => {
 
   return (
     <>
-      <Row style={{ padding: '0.75rem 2.438rem', flexWrap: 'wrap', gap: '1rem' }} gap={'3.25rem'} justify="space-between" align="start">
+      <Wrap padding="0.75rem 2.438rem" gap={'3.25rem'} justify="space-between" align="center">
         <Link to="/">
           <Header1 color="--gray-900" $bold>
             #IMPLUDE
@@ -22,7 +22,7 @@ const Header = () => {
         >
           <Menu />
         </MenuImage>
-        <MenuWrap gap={'3.25rem'} align="center" open={isMenuOpened}>
+        <MenuWrap gap={'3.25rem'} align={'center'} open={isMenuOpened}>
           <Link to="/history">
             <HeaderMenu color="--gray-700">역사</HeaderMenu>
           </Link>
@@ -36,7 +36,7 @@ const Header = () => {
             <HeaderMenu color="--gray-700">팀원 모집</HeaderMenu>
           </Link>
         </MenuWrap>
-      </Row>
+      </Wrap>
     </>
   )
 }
