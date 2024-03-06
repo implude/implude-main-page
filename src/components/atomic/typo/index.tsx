@@ -48,3 +48,9 @@ export const Detail = styled(TypoRef)`
   font-weight: 500;
   line-height: 1.813rem;
 `
+
+export const RecruitText = styled(TypoRef)<{ highlight?: Boolean }>`
+  font-size: ${(p) => (p.highlight ? '2.5rem' : '2.25rem')};
+  font-weight: ${(p) => (p.highlight ? '700' : '500')};
+  font-style: normal;
+`
