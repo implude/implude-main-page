@@ -18,6 +18,7 @@ import {
 export default function RecruitPage() {
   const [part, setPart] = useState(0)
   const [detailPartDev, setDetailPartDev] = useState(0)
+  const applyProcess = [['지원서', '접수'], ['지원서', '검토'], ['지원서', '결과 발표'], ['면접'], ['최종', '발표']]
 
   return (
     <Col>
@@ -34,38 +35,19 @@ export default function RecruitPage() {
               임플루드와 함께하기로 결정하셨다면, 임플루드 합류 여정을 소개해드릴게요!
             </Header2>
             <Blank height="3.75rem" />
-            <Row justify="space-between" gap={'-3.125rem'}>
-              <TitleCircle style={{ background: '#99c8ff' }}>
-                <CircleText color="black">
-                  지원서
-                  <br />
-                  접수
-                </CircleText>
-              </TitleCircle>
-              <TitleCircle style={{ background: '#3391ff' }}>
-                <CircleText color="black">
-                  지원서
-                  <br />
-                  검토
-                </CircleText>
-              </TitleCircle>
-              <TitleCircle style={{ background: '#005ecc' }}>
-                <CircleText color="--gray-white">
-                  지원서
-                  <br />
-                  결과 발표
-                </CircleText>
-              </TitleCircle>
-              <TitleCircle style={{ background: '#002f66' }}>
-                <CircleText color="--gray-white">면접</CircleText>
-              </TitleCircle>
-              <TitleCircle style={{ background: 'black' }}>
-                <CircleText color="--gray-white">
-                  최종
-                  <br />
-                  발표
-                </CircleText>
-              </TitleCircle>
+            <Row>
+              {applyProcess.map((process, i) => (
+                <TitleCircle key={i} width={''} color={`--brand-${200 * (i + 1) - Math.floor(i / 3) * 100}`}>
+                  <CircleText color={i < 2 ? '--gray-black' : '--gray-white'}>
+                    {process.map((x, i) => (
+                      <div key={i}>
+                        {x}
+                        {i + 1 === process.length ? null : <br />}
+                      </div>
+                    ))}
+                  </CircleText>
+                </TitleCircle>
+              ))}
             </Row>
             <Blank height="2rem" />
             <Description color={'--gray-400'}>*상황에 따라 유동적으로 변경될 수 있어요.</Description>
@@ -359,8 +341,8 @@ const TitleCircle = styled.div`
   width: 15.625rem;
   height: 15.625rem;
   border-radius: 50%;
-  position: absolute;
-  text-align: center;
+  margin: 0 -3.125rem 0 0;
+  ${(p) => p.color && `background-color: var(${p.color});`}
   justify-content: center;
   align-items: center;
 `
