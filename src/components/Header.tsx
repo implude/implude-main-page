@@ -8,7 +8,7 @@ const Header = () => {
 
   return (
     <>
-      <Row style={{ padding: '0.75rem 4.438rem' }} gap={'3.25rem'} justify="space-between" align="center">
+      <Row style={{ padding: '0.75rem 2.438rem', flexWrap: 'wrap', gap: '1rem' }} gap={'3.25rem'} justify="space-between" align="start">
         <Link to="/">
           <Header1 color="--gray-900" $bold>
             #IMPLUDE
@@ -52,7 +52,7 @@ const MenuWrap = styled(Wrap)<{ open?: boolean }>`
     display: ${(p) => (p.open ? '' : 'none')};
     width: 6.25rem;
     gap: 20px;
-    margin-top: 30px;
+    margin-top: 3rem;
   }
 `
 
@@ -60,8 +60,8 @@ const MenuImage = styled.div`
   display: none;
   @media (max-width: 890px) {
     display: inline-block;
-    position: absolute;
-    right: 6.25rem;
+    position: relative;
+    top: 0.7rem;
   }
 `
 

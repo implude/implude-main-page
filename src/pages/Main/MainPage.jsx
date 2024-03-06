@@ -9,6 +9,9 @@ import logo from '../../assets/implude.svg'
 import NewsCard from './NewsCard'
 import { ArrowLeft, ArrowRight } from 'lucide-react'
 import { useMediaQuery } from 'react-responsive'
+import NewsThumbsList from './NewsThumbs.json'
+
+const { recruit } = NewsThumbsList
 
 const mainCss = {
   container : {
@@ -91,7 +94,8 @@ const news = {
     alignItems: 'center',
     borderRadius: '10px',
     position: 'relative',
-    overflow: 'hidden'
+    overflow: 'hidden',
+    pointerEvents: 'none'
   },
   mainli: {
     width: '387px',
@@ -104,17 +108,6 @@ const news = {
     borderRadius: '10px',
     position: 'relative',
     overflow: 'hidden'
-  }
-}
-
-function messageBar(n) {
-  return {
-    width: `${n / 16}rem`,
-    height: '0.6vw',
-    background: 'black',
-    display: 'inline-block',
-    position: 'relative',
-    bottom: '1.5vw'
   }
 }
 
@@ -146,7 +139,7 @@ const newsData = [
     color : ''
   },
   { // 맨 처음 메인으로 보여줄 뉴스
-    imgSrc : slogan,
+    imgSrc : recruit,
     title1 : '임플루드',
     title2 : '신규 부원 모집',
     link : 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
@@ -176,8 +169,9 @@ const mainNewsIdx = 2
 export default function MainPage() {
 
   const [newsDataState, setMyArray] = useState([...newsData]);
+  
 
-  function newsLeft() {
+  function newsRight() {
     if(newsDataState[3].imgSrc) {
       const newArray = [...newsDataState.slice(1), newsDataState[0]];
       setMyArray(newArray);
@@ -186,7 +180,7 @@ export default function MainPage() {
     }
   }
 
-  function newsRight() {
+  function newsLeft() {
     if(newsDataState[1].imgSrc) {
       const newArray = [newsDataState[newsDataState.length - 1], ...newsDataState.slice(0, -1)];
       setMyArray(newArray);
@@ -196,18 +190,32 @@ export default function MainPage() {
   }
 
   const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' })
+  const isBarHastobeThin = useMediaQuery({ query: '(max-width: 800px)' })
+  const isArrowHastogoUp = useMediaQuery({ query: '(max-width: 560px)' })
 
   if(isTabletOrMobile) {
+    mainCss.container = {
+      display: 'flex',
+      justifyContent: 'center',
+      padding: '2rem',
+      flexDirection: 'Column',
+      gap: '7rem'
+    }
     mainCss.slogan = {
       flexGrow: '2',
       position: 'relative',
-      marginBottom: '2vw'
+      marginBottom: '2vw',
+      width: '100%'
     }
     mainCss.slogansns = {
-      width: '80vw',
+      width: 'calc(100vw - 4rem)',
       display: 'flex',
       flexDirection: 'column',
-      transform: 'translate(3vw)'
+      justifyContent: 'center',
+    }
+    mainCss.img = {
+      borderRadius: '15px',
+      width: '100%'
     }
     mainCss.sns = {
       flexGrow: '1',
@@ -217,20 +225,112 @@ export default function MainPage() {
     }
     mainCss.sloganMent = {
       color: 'white',
-      fontSize: '3.3vw',
+      fontSize: '5vw',
       fontWeight: '700',
       position: 'relative',
       height: '0',
-      top: '32vw',
+      top: '31vw',
       left: '3vw'
     }
+    mainCss.message = {
+      background: 'var(--gray-0)',
+      border: '1px solid var(--gray-100)',
+      borderRadius: '20px',
+      fontSize: '8vw',
+      textAlign: 'center',
+      fontWeight: 'bold',
+      padding: '8rem 0',
+      margin: '0 3rem'
+    }
+    news.title = {
+      fontSize: '3rem',
+      fontWeight: '700',
+      textAlign: 'center'
+    }
   } else {
+    mainCss.container = {
+      display: 'flex',
+      justifyContent: 'center',
+      padding: '2rem 5rem',
+      flexDirection: 'Column',
+      gap: '13.75rem'
+    }
     mainCss.slogansns = {
       display: 'flex',
       gap: '2vw',
       width: '90vw'
     }
+    mainCss.img = {
+      borderRadius: '30px',
+      width: '100%'
+    }
+    mainCss.slogan = {
+      flexGrow: '2',
+      position: 'relative'
+    },
+    mainCss.sns = {
+      flexGrow: '1',
+      display: 'flex',
+      flexDirection: 'Column',
+      gap: '2vw',
+    },
+    mainCss.sloganMent = {
+      color: 'white',
+      fontSize: '3.3vw',
+      fontWeight: '700',
+      position: 'relative',
+      top: '67.5%',
+      left: '7%',
+      height: '0'
+    }
+    mainCss.message = {
+      background: 'var(--gray-0)',
+      border: '1px solid var(--gray-100)',
+      borderRadius: '20px',
+      fontSize: '5vw',
+      textAlign: 'center',
+      fontWeight: 'bold',
+      padding: '8rem 0',
+      margin: '0 3rem'
+    }
+    news.title = {
+      fontSize: '4rem',
+      fontWeight: '700',
+      textAlign: 'center'
+    }
   }
+
+
+  function messageBar(n) {
+    return {
+      width: `${isTabletOrMobile ? n / 64 : n / 16}rem`,
+      height: `${isBarHastobeThin ? '0.3' : '0.6'}rem`,
+      background: 'black',
+      display: 'inline-block',
+      position: 'relative',
+      bottom: '1.5vw'
+    }
+  }
+
+  const common = `
+  transform: scale(1.7) ${isArrowHastogoUp ? 'translateY(6rem)' : 'translateY(19rem)'};
+  position: relative;
+  z-index: 3;
+  cursor: pointer;
+  border-radius: 20px;
+  padding: 0.3rem;
+  box-sizing: content-box;
+  `
+
+  const Right = styled(ArrowRight)`
+    ${common}
+    right: ${isArrowHastogoUp ? '-3rem' : '-15.5rem'};
+  `
+
+  const Left = styled(ArrowLeft)`
+    ${common}
+    left: ${isArrowHastogoUp ? '-3rem' : '-15.5rem'};
+  `
 
   return (
     <div style={mainCss.container}>
@@ -255,8 +355,16 @@ export default function MainPage() {
         <span style={messageBar(114)}></span> POTENTIAL <span style={messageBar(62)}></span> T<span style={mainCss.blue}>(E)</span>AM
       </div>
       <div> {/* 임플 뉴스 부분 */}
-        <Right onClick={newsRight}/>
-        <Left onClick={newsLeft}/>
+        <div style={
+          {
+            width: '100%',
+            display: 'flex',
+            justifyContent: 'center'
+          }
+        }>  
+          <Right onClick={newsRight}/>
+          <Left onClick={newsLeft}/>
+        </div>
         <div style={news.title}>
           임플 뉴스
         </div>
@@ -293,28 +401,3 @@ export default function MainPage() {
     </div>
   )
 }
-
-const common = `
-  transform: scale(1.7) translateY(19rem);
-  position: absolute;
-  z-index: 1;
-  cursor: pointer;
-  transition: all 0.5s ease;
-  background: var(--gray-100);
-  border-radius: 20px;
-  padding: 0.3rem;
-  box-sizing: content-box;
-  &:hover {
-    transform: scale(2) translateY(16.2rem);
-  }
-`
-
-const Right = styled(ArrowRight)`
-  ${common}
-  right: 1.4rem;
-`
-
-const Left = styled(ArrowLeft)`
-  ${common}
-  left: 1.4rem;
-`
