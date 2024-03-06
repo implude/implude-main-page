@@ -51,7 +51,6 @@ export const Detail = styled(TypoRef)`
 
 export const RecruitText = styled(TypoRef)<{ highlight?: Boolean; $bold?: Boolean }>`
   font-size: ${(p) => (p.highlight ? '2.5rem' : '2.25rem')};
-  font-weight: ${(p) => (p.highlight ? '700' : '500')};
   font-weight: ${(p) => (p.$bold ? '700' : '500')};
   font-style: normal;
   text-wrap: wrap;
