@@ -189,7 +189,8 @@ export default function MainPage() {
     }
   }
 
-  const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' })
+  const layout1400 = useMediaQuery({ query: '(max-width: 1400px)' })
+  const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1200px)' })
   const isBarHastobeThin = useMediaQuery({ query: '(max-width: 800px)' })
   const isArrowHastogoUp = useMediaQuery({ query: '(max-width: 560px)' })
 
@@ -313,7 +314,7 @@ export default function MainPage() {
   }
 
   const common = `
-  transform: scale(1.7) ${isArrowHastogoUp ? 'translateY(6rem)' : 'translateY(19rem)'};
+  transform: scale(1.7) ${isTabletOrMobile ? 'translateY(22rem)' : layout1400 ? 'translateY(22rem)' : isArrowHastogoUp ? 'translateY(6rem)' : 'translateY(20rem)'};
   position: relative;
   z-index: 3;
   cursor: pointer;
@@ -324,12 +325,12 @@ export default function MainPage() {
 
   const Right = styled(ArrowRight)`
     ${common}
-    right: ${isArrowHastogoUp ? '-3rem' : '-15.5rem'};
+    right: ${isTabletOrMobile ? '-20rem' : layout1400 ? '-17rem' : isArrowHastogoUp ? '-3rem' : '-15.5rem'}
   `
 
   const Left = styled(ArrowLeft)`
     ${common}
-    left: ${isArrowHastogoUp ? '-3rem' : '-15.5rem'};
+    left: ${isTabletOrMobile ? '-20rem' : layout1400 ? '-17rem' : isArrowHastogoUp ? '-3rem' : '-15.5rem'}
   `
 
   return (
