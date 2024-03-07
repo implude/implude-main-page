@@ -1,11 +1,13 @@
 import React from 'react'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
+import { useMediaQuery } from 'react-responsive'
 import styled, { css } from 'styled-components'
 import { Blank, Col, Description, Header1, Row, Title } from '../../components/atomic'
 
 export default function HistoryPage() {
   const [activated, setActivated] = useState(2023)
+  const isMobile = useMediaQuery({ query: '(max-width: 576px)' })
 
   const data = [
     [
@@ -196,8 +198,8 @@ export default function HistoryPage() {
     ],
   ]
   return (
-    <Col gap="18rem" style={{ width: '100%' }}>
-      <Col gap={'10rem'}>
+    <Col gap="13.75rem" margin="13.75rem auto" width="100%">
+      <Col gap={'7.5rem'} margin="0 auto">
         <Row justify="center">
           <IntroText color={'--gray-black'}>
             <span>임플루드</span>는 오늘도
@@ -206,11 +208,11 @@ export default function HistoryPage() {
           </IntroText>
         </Row>
         <Row justify="center">
-          <Row gap={'8rem'}>
-            <YearContainer gap={'6rem'}>
+          <Row justify="space-between" width="80.438rem" padding={'0 3rem'}>
+            <YearContainer gap={'4.625rem'}>
               {[...Array(9)].map((v, i) => (
                 <>
-                  <Row width="10rem" justify="space-between">
+                  <Row width="15.75rem" justify="space-between" align="center">
                     <Year
                       hover={{ color: '--gray-black' }}
                       enabled={2023 - i === activated}
@@ -223,10 +225,10 @@ export default function HistoryPage() {
                 </>
               ))}
             </YearContainer>
-            <HistoryContainer gap={'6rem'}>
+            <HistoryContainer gap={'6.25rem'} width={'50rem'}>
               {data[2023 - activated].map((v, i) => (
-                <HistoryBlock onClick={() => setActivated(2023 - i)}>
-                  <Header1 $bold color={'--gray-400'}>
+                <HistoryBlock key={i}>
+                  <Header1 $bold color={'--brand-400'}>
                     {v.date}
                   </Header1>
                   <Header1 $bold color={'--gray-black'}>
@@ -239,40 +241,42 @@ export default function HistoryPage() {
         </Row>
       </Col>
 
-      <Col gap={'10rem'}>
+      <Col gap={'7.5rem'}>
         <IntroText color={'--gray-black'}>언론 속의 임플루드</IntroText>
-        <Col gap={'5rem'} style={{ padding: '0 10rem' }}>
-          <Link to="https://www.hankyung.com/society/article/2020072102397">
-            <Col gap={'2rem'} style={{ padding: '1rem' }}>
-              <Row gap={'3rem'} align="center">
-                <Header1 $bold color={'--brand-600'}>
-                  한국 경제
+        <Row justify="center">
+          <Col gap={'3.75rem'} style={{ padding: '0 7.5rem' }}>
+            <Link to="https://www.hankyung.com/society/article/2020072102397">
+              <Col gap={'1.5rem'} style={{ padding: '0.625rem' }}>
+                <Row gap={'2rem'} align="center">
+                  <Header1 $bold color={'--brand-600'}>
+                    한국 경제
+                  </Header1>
+                  <Header1 $bold color={'--gray-black'}>
+                    2020.07.21
+                  </Header1>
+                </Row>
+                <Header1 $bold style={{ overflow: 'hidden', textOverflow: 'ellipsis' }} color={'--gray-black'}>
+                  [스타트업 플러스] 창업은 시작이 반... "상상하는 대로 만들어라"
                 </Header1>
-                <Header1 $bold color={'--gray-black'}>
-                  2020.07.21
+              </Col>
+            </Link>
+            <Link to="https://game.donga.com/105214/">
+              <Col gap={'1.5rem'} style={{ padding: '0.625rem' }}>
+                <Row gap={'2rem'} align="center">
+                  <Header1 $bold color={'--brand-600'}>
+                    게임 동아
+                  </Header1>
+                  <Header1 $bold color={'--gray-black'}>
+                    2020.07.21
+                  </Header1>
+                </Row>
+                <Header1 $bold style={{ overflow: 'hidden', textOverflow: 'ellipsis' }} color={'--gray-black'}>
+                  [STAC2022] 미래산업 부문 대상 'ASD' "AI를 통한 더 좋은 공부 방법을 소개해요"
                 </Header1>
-              </Row>
-              <Header1 $bold style={{ overflow: 'hidden', textOverflow: 'ellipsis' }} color={'--gray-black'}>
-                [스타트업 플러스] 창업은 시작이 반... "상상하는 대로 만들어라"
-              </Header1>
-            </Col>
-          </Link>
-          <Link to="https://game.donga.com/105214/">
-            <Col gap={'2rem'} style={{ padding: '1rem' }}>
-              <Row gap={'3rem'} align="center">
-                <Header1 $bold color={'--brand-600'}>
-                  게임 동아
-                </Header1>
-                <Header1 $bold color={'--gray-black'}>
-                  2020.07.21
-                </Header1>
-              </Row>
-              <Header1 $bold style={{ overflow: 'hidden', textOverflow: 'ellipsis' }} color={'--gray-black'}>
-                [STAC2022] 미래산업 부문 대상 'ASD' "AI를 통한 더 좋은 공부 방법을 소개해요"
-              </Header1>
-            </Col>
-          </Link>
-        </Col>
+              </Col>
+            </Link>
+          </Col>
+        </Row>
       </Col>
     </Col>
   )
@@ -288,11 +292,10 @@ const YearContainer = styled(Col)`
   &::after {
     content: '';
     width: 0.25rem;
-    height: 68rem;
+    height: 75rem;
     position: absolute;
     background: var(--gray-200);
-
-    transform: translate(9.3rem, 1.5rem);
+    transform: translate(14.719rem, 2.375rem);
   }
 `
 const Year = styled(Title)`
@@ -301,26 +304,24 @@ const Year = styled(Title)`
 `
 const YearCircle = styled.div`
   z-index: 1;
-  border-radius: 1.5rem;
+  border-radius: 1.875rem;
+  width: 1.875rem;
+  height: 1.875rem;
+  transition: border-color 0.3s ease-in-out;
   ${(p) =>
     p.enabled
       ? css`
-          width: 1.5rem;
-          height: 1.5rem;
-
           background: white;
-          border: 0.25rem solid var(--brand-600);
-          transform: translate(0.1rem, 1rem);
+          border: 0.5rem solid var(--brand-600);
+          box-sizing: content-box;
+          transform: translate(0.5rem);
         `
       : css`
-          width: 1rem;
-          height: 1rem;
           background: var(--gray-200);
-          transform: translate(-0.08rem, 1rem);
+          border-color: var(--gray-white);
         `}
 `
 const HistoryContainer = styled(Col)``
 const HistoryBlock = styled.div`
   position: relative;
-  cursor: pointer;
 `
