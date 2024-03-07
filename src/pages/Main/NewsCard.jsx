@@ -21,8 +21,6 @@ export default function NewsCard(props) {
     newsButtonSpan: {
       background: 'white',
       padding: '1rem 1.5rem',
-      position: 'relative',
-      top: `${props.isMain ? '4rem' : '2.7rem'}`,
       borderRadius: '30px',
       color: '#004799',
       fontWeight: '600',
@@ -55,7 +53,14 @@ export default function NewsCard(props) {
         <span style={{ color: 'white' }}>{props.title1}</span>
         <br></br>
         <span style={{ color: `${props.color}`, fontWeight: 'bold' }}>{props.title2}</span>
-        <Link to={props.link}>
+        <Link to={props.link} style={
+            {
+              height: 'auto',
+              display: 'inline-block',
+              position: 'relative',
+              top: props.isMain ? '4rem' : '2.7rem'
+            }
+          }>
           <div style={news.newsButtonDiv}>
             <span style={news.newsButtonSpan}>{props.linkMsg}</span>
           </div>

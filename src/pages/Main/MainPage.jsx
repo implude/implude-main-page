@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import styled, { css } from 'styled-components'
+import styled, { css, keyframes } from 'styled-components'
 import { Link, Outlet, useParams } from 'react-router-dom'
 import { Col, Row, Wrap, Title, Header1, Description } from '../../components/atomic'
 import slogan from '../../assets/mainpage_1.jpg'
@@ -130,19 +130,19 @@ const newsData = [
     linkMsg : '',
     color : ''
   },
-  {
-    imgSrc : null,
-    title1 : '',
-    title2 : '',
-    link : '',
-    linkMsg : '',
-    color : ''
+  { // 맨 처음 메인으로 보여줄 뉴스
+    imgSrc : recruit,
+    title1 : '임플루드',
+    title2 : '신규 부원 모집!!',
+    link : 'https://surfing.dimigo.in/circle/65e0b0a9160ba664e8e7518e/',
+    linkMsg : '지원 바로가기',
+    color : 'var(--caution-500)'
   },
   { // 맨 처음 메인으로 보여줄 뉴스
     imgSrc : recruit,
     title1 : '임플루드',
-    title2 : '신규 부원 모집',
-    link : 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+    title2 : '신규 부원 모집!!',
+    link : 'https://surfing.dimigo.in/circle/65e0b0a9160ba664e8e7518e/',
     linkMsg : '지원 바로가기',
     color : 'var(--caution-500)'
   },
@@ -302,26 +302,38 @@ export default function MainPage() {
     }
   }
 
-
   function messageBar(n) {
-    return {
-      width: `${isTabletOrMobile ? n / 64 : n / 16}rem`,
-      height: `${isBarHastobeThin ? '0.3' : '0.6'}rem`,
-      background: 'black',
-      display: 'inline-block',
-      position: 'relative',
-      bottom: '1.5vw'
-    }
+    const animation = keyframes`
+      0% {
+        width: ${isTabletOrMobile ? `${n / 32}rem` : `${n / 24}rem`}
+      }
+      50% {
+        width: ${isTabletOrMobile ? `${n / 32}rem` : `${n / 24 + 2}rem`}
+      }
+      100% {
+        width: ${isTabletOrMobile ? `${n / 32}rem` : `${n / 24}rem`}
+      }
+    `
+    const ReturnSpan = styled.span`
+      width: ${isTabletOrMobile ? `${n / 32}rem` : `${n / 24}rem`};
+      height: ${isBarHastobeThin ? '0.5rem' : '0.7rem'};
+      background: black;
+      display: inline-block;
+      position: relative;
+      bottom: 1.5vw;
+      animation: ${animation} 3s ease-in-out infinite;
+    `
+    return <ReturnSpan />
   }
 
   const common = `
-  transform: scale(1.7) ${isBarHastobeThin ? 'translateY(2.1rem)' : 'translateY(20.5rem)'};
-  position: relative;
-  z-index: 3;
-  cursor: pointer;
-  border-radius: 20px;
-  padding: 0.3rem;
-  box-sizing: content-box;
+    transform: scale(1.7) ${isBarHastobeThin ? 'translateY(2.1rem)' : 'translateY(20.5rem)'};
+    position: relative;
+    z-index: 3;
+    cursor: pointer;
+    border-radius: 20px;
+    padding: 0.3rem;
+    box-sizing: content-box;
   `
 
   const Right = styled(ArrowRight)`
@@ -350,11 +362,11 @@ export default function MainPage() {
           </Link>
         </div>
       </div>
-      <div style={mainCss.message}> {/* 임플루드 문구 부분 */}
-        YOUR <span style={messageBar(244)}></span> <span style={mainCss.blue}>(IM)</span>PACT <br></br>
-        <span style={mainCss.blue}>(P)</span>ASSION <span style={messageBar(96)}></span> <span style={mainCss.blue}>(L)</span>EARN <span style={messageBar(132)}></span> <br></br>
-        FUT<span style={mainCss.blue}>(U)</span>RE <span style={messageBar(188)}></span> <span style={mainCss.blue}>(D)</span>REAM <br></br>
-        <span style={messageBar(114)}></span> POTENTIAL <span style={messageBar(62)}></span> T<span style={mainCss.blue}>(E)</span>AM
+      <div style={mainCss.message}> {/* 임플루드 문구 부분 244 */}
+        YOUR {messageBar(244)} <span style={mainCss.blue}>(IM)</span>PACT <br />
+        <span style={mainCss.blue}>(P)</span>ASSION {messageBar(96)} <span style={mainCss.blue}>(L)</span>EARN {messageBar(132)} <br />
+        FUT<span style={mainCss.blue}>(U)</span>RE {messageBar(188)} <span style={mainCss.blue}>(D)</span>REAM <br />
+        {messageBar(114)} POTENTIAL {messageBar(62)} T<span style={mainCss.blue}>(E)</span>AM
       </div>
       <div> {/* 임플 뉴스 부분 */}
         <div style={
