@@ -89,7 +89,7 @@ function Process() {
         </Col>
         <Row justify="center">
           <ApplyButton>
-            <Description style={{ color: 'white' }}>지원서 작성 바로가기</Description>
+            <Link to="https://surfing.dimigo.in/circle/65e0b0a9160ba664e8e7518e/" style={{ color: 'white' }}>지원서 작성 바로가기</Link>
           </ApplyButton>
         </Row>
       </Col>
@@ -364,6 +364,7 @@ const ApplyButton = styled.button`
   background: var(--brand-500);
   cursor: pointer;
   transition: all 0.3s ease-in-out;
+  font-size: 1.5rem;
   &: hover {
     background: var(--brand-600);
   }
