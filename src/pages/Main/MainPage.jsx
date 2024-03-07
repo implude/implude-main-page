@@ -189,8 +189,10 @@ export default function MainPage() {
     }
   }
 
-  const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' })
+  const layout1400 = useMediaQuery({ query: '(max-width: 1400px)' })
+  const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1200px)' })
   const isBarHastobeThin = useMediaQuery({ query: '(max-width: 800px)' })
+  const layout768 = useMediaQuery({ query: '(max-width: 768px)' })
   const isArrowHastogoUp = useMediaQuery({ query: '(max-width: 560px)' })
 
   if(isTabletOrMobile) {
@@ -313,7 +315,7 @@ export default function MainPage() {
   }
 
   const common = `
-  transform: scale(1.7) ${isArrowHastogoUp ? 'translateY(6rem)' : 'translateY(19rem)'};
+  transform: scale(1.7) ${isBarHastobeThin ? 'translateY(2.1rem)' : 'translateY(20.5rem)'};
   position: relative;
   z-index: 3;
   cursor: pointer;
@@ -324,12 +326,12 @@ export default function MainPage() {
 
   const Right = styled(ArrowRight)`
     ${common}
-    right: ${isArrowHastogoUp ? '-3rem' : '-15.5rem'};
+    right: ${isBarHastobeThin ? (layout768 ? (isArrowHastogoUp ? '-10.5rem' : '-20.5rem') : '-11.5rem') : '-15.5rem'};
   `
 
   const Left = styled(ArrowLeft)`
     ${common}
-    left: ${isArrowHastogoUp ? '-3rem' : '-15.5rem'};
+    left: ${isBarHastobeThin ? (layout768 ? (isArrowHastogoUp ? '-10.5rem' : '-20.5rem') : '-11.5rem') : '-15.5rem'};
   `
 
   return (
