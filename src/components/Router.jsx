@@ -11,6 +11,7 @@ import RecruitPage from '../pages/Recruit/RecruitPage'
 import Footer from '../components/Footer'
 import Header from '../components/Header'
 import HeaderBanner from '../components/HeaderBanner'
+import ScrollToTop from './ScrollToTop'
 
 const Layout = () => {
   return (
@@ -26,6 +27,7 @@ const Layout = () => {
 export default function Router() {
   return (
     <BrowserRouter>
+      <ScrollToTop></ScrollToTop>
       <Routes>
         <Route element={<Layout />}>
           <Route path="/" element={<MainPage />} />

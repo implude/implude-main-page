@@ -3,7 +3,6 @@ import { styled } from 'styled-components'
 const TypoRef = styled.div<TypoType>`
   color: ${(p) => (p.color ? `var(${p.color})` : `var(--gray-500)`)};
   transition: all 0.3s ease-in-out;
-  white-space: nowrap;
   &:hover {
     ${(p) =>
       p.hover &&
@@ -13,6 +12,7 @@ const TypoRef = styled.div<TypoType>`
         ${p.hover.weight && `font-weight: ${p.hover.weight};`}
     `}
   }
+  word-break: keep-all;
 `
 
 export const Title = styled(TypoRef)`
@@ -53,7 +53,6 @@ export const RecruitText = styled(TypoRef)<{ highlight?: Boolean; $bold?: Boolea
   font-size: ${(p) => (p.highlight ? '2.5rem' : '2.25rem')};
   font-weight: ${(p) => (p.$bold ? '700' : '500')};
   font-style: normal;
-  text-wrap: wrap;
   li {
     text-indent: -3rem;
     margin-left: 3rem;

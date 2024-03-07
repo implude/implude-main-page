@@ -35,11 +35,6 @@ a {
     font-size: 50%;
   }
 }
-@media (max-width: 576px) {
-  html {
-    font-size: 43.75%;
-  }
-}
 :root {
   --gray-white: #ffffff;
   --gray-0: #fbfbfb;
