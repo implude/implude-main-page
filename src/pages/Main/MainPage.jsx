@@ -141,8 +141,8 @@ const newsData = [
   { // 맨 처음 메인으로 보여줄 뉴스
     imgSrc : recruit,
     title1 : '임플루드',
-    title2 : '신규 부원 모집',
-    link : 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+    title2 : '신규 부원 모집!!',
+    link : 'https://surfing.dimigo.in/circle/65e0b0a9160ba664e8e7518e/',
     linkMsg : '지원 바로가기',
     color : 'var(--caution-500)'
   },

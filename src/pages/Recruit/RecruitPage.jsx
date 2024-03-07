@@ -22,11 +22,11 @@ function Intro() {
       <Title color={'--gray-black'} style={{ textAlign: 'center' }}>
         시작하기에 앞서
       </Title>
-      <Col gap="2rem" padding="0 7.5rem">
+      <Col gap="2rem">
         <Header2 color={'--gray-black'}>
           임플루드와 함께하기로 결정하셨다면, 임플루드 합류 여정을 소개해드릴게요!
         </Header2>
-        <Row padding="1.75rem 1.563rem 0 0" justify="center">
+        <Row justify="left" style={{marginLeft: '-3rem'}}>
           {applyProcess.map((process, i) => (
             <TitleCircle key={i} width={''} color={`--brand-${200 * (i + 1) - Math.floor(i / 3) * 100}`}>
               <CircleText color={i < 2 ? '--gray-black' : '--gray-white'}>
@@ -40,7 +40,7 @@ function Intro() {
             </TitleCircle>
           ))}
         </Row>
-        <Description color={'--gray-400'}>*상황에 따라 유동적으로 변경될 수 있어요.</Description>
+        <Description color={'--gray-400'} style={{fontSize: '1.3rem'}}>*상황에 따라 유동적으로 변경될 수 있어요.</Description>
       </Col>
     </Col>
   )
@@ -48,9 +48,9 @@ function Intro() {
 
 function Process() {
   return (
-    <Col gap="12.5rem" padding="7.5rem">
+    <Col gap="12.5rem">
       <Col gap="3.25rem">
-        <Title color={'--gray-black'}>1. 포지션 선택하기</Title>
+        <RecruitTitle color={'--gray-black'}>1. 포지션 선택하기</RecruitTitle>
         <RecruitText color={'--gray-black'}>
           임플루드의 포지션은 ‘FE, BE, APP, 디자이너, 기획자’로 구성되어 있어요.
           <br />
@@ -61,7 +61,7 @@ function Process() {
       <Col gap="7.5rem">
         <Col>
           <Col gap="3.25rem">
-            <Title color={'--gray-black'}>2. 지원서 작성하기</Title>
+            <RecruitTitle color={'--gray-black'}>2. 지원서 작성하기</RecruitTitle>
             <Col gap="3rem">
               <RecruitText color={'--gray-black'}>
                 임플루드에서 활동하고싶은 포지션을 선택했다면, 이제 지원서를 작성할 차례에요.
@@ -95,7 +95,7 @@ function Process() {
       </Col>
 
       <Col gap="3.25rem">
-        <Title color={'--gray-black'}>3. 면접 보기</Title>
+        <RecruitTitle color={'--gray-black'}>3. 면접 보기</RecruitTitle>
         <Col gap="3rem">
           <RecruitText color={'--gray-black'}>
             벌써 마지막 단계에요! 면접에서 합격한다면 임플루드의 일원으로서 1년을 보내게 됩니다!
@@ -204,10 +204,10 @@ function PartDetail() {
     },
   }
   return (
-    <Col padding={'7.5rem'}>
-      <Title color={'--gray-black'} style={{ textAlign: 'center' }}>
+    <Col width="90vw" justify='center' style={{position:'relative', right: '4rem'}}>
+      <RecruitTitle color={'--gray-black'} style={{ textAlign: 'center', width: '100%' }}>
         모집 분야 자세히 보기
-      </Title>
+      </RecruitTitle>
       <Row gap="1rem" justify="center" margin={'7.5rem 0 0 0'}>
         <PartButton
           style={{ backgroundColor: part == 0 ? 'var(--brand-600)' : 'var(--gray-white)' }}
@@ -245,7 +245,7 @@ function PartDetail() {
                 setDetailPartDev(0)
               }}
             >
-              <Description style={{ color: detailPartDev == 0 ? 'white' : 'var(--gray-600)' }}>프론트앤드</Description>
+              <Description style={{ color: detailPartDev == 0 ? 'white' : 'var(--gray-600)' }}>프론트엔드</Description>
             </PartButton>
             <PartButton
               style={{ backgroundColor: detailPartDev == 1 ? 'var(--brand-600)' : 'var(--gray-white)' }}
@@ -253,7 +253,7 @@ function PartDetail() {
                 setDetailPartDev(1)
               }}
             >
-              <Description style={{ color: detailPartDev == 1 ? 'white' : 'var(--gray-600)' }}>백앤드</Description>
+              <Description style={{ color: detailPartDev == 1 ? 'white' : 'var(--gray-600)' }}>백엔드</Description>
             </PartButton>
             <PartButton
               style={{ backgroundColor: detailPartDev == 2 ? 'var(--brand-600)' : 'var(--gray-white)' }}
@@ -307,7 +307,7 @@ export default function RecruitPage() {
     <>
       <BannerImage src="/img/RecruitBanner.jpg" />
       <Col margin="0 7.5rem" align="flex-start">
-        <Col gap="21.25rem" margin="13.75rem auto" width="103.75rem">
+        <Col gap="21.25rem" margin="13.75rem auto" width="100%">
           <Intro />
           <Process />
           <PartDetail />
@@ -324,8 +324,20 @@ const BannerImage = styled.img`
 
 const TitleCircle = styled.div`
   display: flex;
-  width: 15.625rem;
-  height: 15.625rem;
+  flex-basis: 11vw;
+  flex-shrink: 0;
+  width: 11vw;
+  height: 11vw;
+  @media (max-width: 1600px) {
+    flex-basis: 18vw;
+    width: 18vw;
+    height: 18vw;
+  }
+  @media (max-width: 600px) {
+    flex-basis: 22vw;
+    width: 22vw;
+    height: 22vw;
+  }
   border-radius: 50%;
   margin: 0 -3.125rem 0 0;
   ${(p) => p.color && `background-color: var(${p.color});`}
@@ -335,6 +347,11 @@ const TitleCircle = styled.div`
 
 const CircleText = styled(Header2)`
   text-align: center;
+  @media (max-width: 600px) {
+    font-size: 1.5rem;
+    box-sizing: border-box;
+    padding-right: 1rem;
+  }
 `
 
 const ApplyButton = styled.button`
@@ -344,11 +361,11 @@ const ApplyButton = styled.button`
   align-items: center;
   border: none;
   border-radius: 3.188rem;
-  background: var(--brand-600);
+  background: var(--brand-500);
   cursor: pointer;
   transition: all 0.3s ease-in-out;
   &: hover {
-    background: var(--brand-500);
+    background: var(--brand-600);
   }
 `
 
@@ -362,14 +379,18 @@ const PartButton = styled.button`
   transition: all 0.3s ease-in-out;
 `
 
+const RecruitTitle = styled(Title)`
+  font-size: 3rem;
+`
+
 function Part({ title, descriptions }) {
   const itemList = Array.isArray(descriptions) ? descriptions : []
   return (
-    <Col align={'flex-start'} gap={'5rem'} padding={'5rem'} width={'100%'}>
-      <Title color="black">{title}</Title>
+    <Col align={'flex-start'} gap={'5rem'} padding={'5rem 0'} width={'100%'}>
+      <Title color="black" style={{fontSize: '3rem'}}>{title}</Title>
       <Col align="flex-start">
         {itemList.map((item, index) => (
-          <RecruitText key={index} color="black" highlight={true}>
+          <RecruitText key={index} color="black" highlight={true} style={{fontSize: '1.8rem'}}>
             <li>{item}</li>
           </RecruitText>
         ))}
