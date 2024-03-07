@@ -44,12 +44,11 @@ const Header = () => {
 const HeaderMenu = styled(Detail)`
   &:hover {
     color: var(--brand-600);
-    font-size: 1.7rem;
   }
 `
 
 const MenuWrap = styled(Wrap)<{ open?: boolean }>`
-  @media (max-width: 308px) {
+  @media (max-width: 388px) {
     display: ${(p) => (p.open ? '' : 'none')};
     width: 6.25rem;
     gap: 20px;
@@ -60,14 +59,15 @@ const MenuWrap = styled(Wrap)<{ open?: boolean }>`
 
 const MenuImage = styled.div`
   display: none;
-  @media (max-width: 308px) {
+  @media (max-width: 388px) {
     display: inline-block;
     position: relative;
     top: 0.4rem;
     width: 50%;
+    margin-left: 10rem;
     text-align: right;
   }
-  @media (max-width: 308px) {
+  @media (max-width: 388px) {
     display: inline-block;
     position; relative;
     top: 0.4rem;
