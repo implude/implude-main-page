@@ -24,10 +24,10 @@ const Footer = () => {
           </Wrap>
           <Row gap={'2rem'}>
             <Link to={'https://www.youtube.com/@implude_official/featured'} style={{ cursor: 'pointer' }}>
-              <Youtube height="6.25rem" width="6.25rem" />
+              <Youtube height="auto" width="3.25rem" />
             </Link>
             <Link to={'https://www.instagram.com/implude_official/'} style={{ cursor: 'pointer' }}>
-              <Instagram height="6.25rem" width="6.25rem" />
+              <Instagram height="auto" width="3.25rem" />
             </Link>
           </Row>
         </Wrap>
