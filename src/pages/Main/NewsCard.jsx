@@ -13,6 +13,9 @@ export default function NewsCard(props) {
       width: '100%',
       textAlign: 'center',
       zIndex: '2',
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'center'
     },
     newsButtonDiv: {
       textAlign: 'center',
@@ -51,7 +54,6 @@ export default function NewsCard(props) {
       />
       <div style={news.liTitle}>
         <span style={{ color: 'white' }}>{props.title1}</span>
-        <br></br>
         <span style={{ color: `${props.color}`, fontWeight: 'bold' }}>{props.title2}</span>
         <Link to={props.link} style={
             {
