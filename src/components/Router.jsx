@@ -23,7 +23,6 @@ const Layout = () => {
     </>
   )
 }
-
 export default function Router() {
   return (
     <BrowserRouter>
