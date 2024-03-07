@@ -49,7 +49,7 @@ const HeaderMenu = styled(Detail)`
 `
 
 const MenuWrap = styled(Wrap)<{ open?: boolean }>`
-  @media (max-width: 538px) {
+  @media (max-width: 308px) {
     display: ${(p) => (p.open ? '' : 'none')};
     width: 6.25rem;
     gap: 20px;
@@ -60,14 +60,14 @@ const MenuWrap = styled(Wrap)<{ open?: boolean }>`
 
 const MenuImage = styled.div`
   display: none;
-  @media (max-width: 538px) {
+  @media (max-width: 308px) {
     display: inline-block;
     position: relative;
     top: 0.4rem;
     width: 50%;
     text-align: right;
   }
-  @media (max-width: 347px) {
+  @media (max-width: 308px) {
     display: inline-block;
     position; relative;
     top: 0.4rem;
