@@ -24,16 +24,16 @@ const Header = () => {
         </MenuImage>
         <MenuWrap gap={'3.25rem'} align={'center'} open={isMenuOpened}>
           <Link to="/history">
-            <HeaderMenu color="--gray-700">역사</HeaderMenu>
+            <HeaderMenu color="--gray-700" onClick={() => {setIsMenuOpened(false)}}>역사</HeaderMenu>
           </Link>
           <Link to="/vision">
-            <HeaderMenu color="--gray-700">핵심가치</HeaderMenu>
+            <HeaderMenu color="--gray-700" onClick={() => {setIsMenuOpened(false)}}>핵심가치</HeaderMenu>
           </Link>
           <Link to="/projects">
-            <HeaderMenu color="--gray-700">프로젝트</HeaderMenu>
+            <HeaderMenu color="--gray-700" onClick={() => {setIsMenuOpened(false)}}>프로젝트</HeaderMenu>
           </Link>
           <Link to="/recruit">
-            <HeaderMenu color="--gray-700">팀원 모집</HeaderMenu>
+            <HeaderMenu color="--gray-700" onClick={() => {setIsMenuOpened(false)}}>팀원 모집</HeaderMenu>
           </Link>
         </MenuWrap>
       </Wrap>
