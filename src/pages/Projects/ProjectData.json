@@ -5,8 +5,12 @@
       "id": 1,
       "imageUrl": ["JipGaGoSipDa.jpg"],
       "year": 2020,
-      "title": "",
-      "detail": "",
+      "title": "전체 귀가 언제냐.., 집가고싶다",
+      "detail": [
+        "단순히 집을 빨리 가고싶다는 개발동기로 만든 집에 갈 때까지 남은 시간을 알려주는 앱 입니다.",
+        "직접 시간을 설정할 수 있고, 다크 모드를 지원합니다. ",
+        "또한 위젯으로도 개발하여 홈 화면에서 간편하게 남은 시간을 확인할 수 있습니다."
+      ],
       "achievement": null,
       "media": null
     },
@@ -14,17 +18,25 @@
       "id": 2,
       "imageUrl": ["DAYCUBE.jpg"],
       "year": 2020,
-      "title": "",
-      "detail": "",
-      "achievement": null,
+      "title": "신개념 IOT 서비스, DAYCUBE",
+      "detail": [
+        "DAYCUBE는 자이로 센서를 활용한 IOT 기기 입니다. 보통의 촉각을 사용하는 IOT 기기와 달리, 새로운 방식의 IOT 기기 입니다."
+      ],
+      "achievement": [
+        {"content" : "삼성 JA KOREA 창업놀이터", "highlight" : false},
+        {"content" : "최우수상", "highlight" : true},
+        {"content" : "수상", "highlight" : false}
+      ],
       "media": null
     },
     {
       "id": 3,
       "imageUrl": ["MOLA.jpg"],
       "year": 2020,
-      "title": "",
-      "detail": "",
+      "title": "나의 인공지능 영어 선생님, MOLA",
+      "detail": [
+        "MOLA는 인공지능 텍스트 인식 기술을 기반으로 한 영어 단어장 어플리케이션입니다. "
+      ],
       "achievement": null,
       "media": null
     },
@@ -32,8 +44,10 @@
       "id": 4,
       "imageUrl": ["JOIN.jpg"],
       "year": 2020,
-      "title": "",
-      "detail": "",
+      "title": "초딩도 가능한 커뮤니티 앱 만들기, JOIN",
+      "detail": [
+        "JOIN은 누구나 간단하게 자신이 원하는 커뮤니티형 앱을 개발 할 수 있게 해주는 어플리케이션입니다."
+      ],
       "achievement": null,
       "media": null
     },
@@ -41,8 +55,10 @@
       "id": 5,
       "imageUrl": ["DINEON.jpg"],
       "year": 2020,
-      "title": "",
-      "detail": "",
+      "title": "당신의 편한 식사시간을 위해, 디넌 앱",
+      "detail": [
+        "실시간 서버 통신으로 그날 그날 교내 급식 시간과, 변경되는 급식 시간, 디넌의 공지사항까지 한눈에 확인할 수 있는 앱입니다."
+      ],
       "achievement": null,
       "media": null
     },
@@ -50,9 +66,17 @@
       "id": 6,
       "imageUrl": ["ITNun.jpg"],
       "year": 2022,
-      "title": "",
-      "detail": "",
-      "achievement": null,
+      "title": "세상을 잇다, 잇는",
+      "detail": [
+        "잇는은 우리나라에 존재하는 지원 정책들을 쉽고 편하게 찾아볼 수 있는 서비스로,",
+        "사회적 약자 및 정보를 얻고자 하는 모든 사람들에게도움을 주고자 만들게 되었습니다.",
+        "지원 정책 뿐만이 아닌 착한가게찾기, 취업정보제공등의 다양한 정보들도 제공하고 있습니다."
+      ],
+      "achievement": [
+        {"content" : "공개SW개발자대회", "highlight" : false},
+        {"content" : "특별상", "highlight" : true},
+        {"content" : "수상", "highlight" : false}
+      ],
       "media": null
     },
     {
@@ -83,28 +107,62 @@
       "id": 8,
       "imageUrl": ["Yummy.jpg"],
       "year": 2023,
-      "title": "",
-      "detail": "",
-      "achievement": null,
+      "title": "당신의 요리를 전하세요, 야미",
+      "detail": [
+        "세상엔 수많은 레시피들이 존재합니다. 하지만 레시피들을 공유하는 것은 상당히 어려운 일이죠.",
+        "",
+        "이를 해결하기 위해, 누구나 자신이 만든 레시피를 쿠킹클래스를 통해 공유하는 서비스 ‘야미’를 기획했습니다.",
+        "타 플랫폼과 달리 야미는 ‘온라인에서 벗어나’ 현장강의와 같은 다양한 강의 형태를 ‘요리를 배우고자 하는 사용자’에게 제공합니다.",
+        "쉽고 편하게 실제 조리과정 영상을 확인한다거나, 쿠킹클래스를 만든 유저와 일대일 질의응답을 하는 기능을 제공해 사용자에게 언제 어디서든 시공간의 제약 없이 수강할 수 있는 쿠킹 클래스를 제공합니다."
+      ],
+      "achievement": [
+        {"content" : "벤처창업아이템경진대회", "highlight" : false},
+        {"content" : "동상", "highlight" : true},
+        {"content" : "수상", "highlight" : false}
+      ],
       "media": null
     },
     {
       "id": 9,
       "imageUrl": ["MK1.jpg"],
       "year": 2023,
-      "title": "",
-      "detail": "",
-      "achievement": null,
+      "title" : "가장 강력한 매크로 키보드, MK1",
+      "detail": [
+        "업무에는 다양한 반복 작업이 있습니다. 이러한 반복작업은 업무의 효율성을 저해합니다.",
+        "",
+        "이를 해결하고자 반복작업을 키 하나로 해결할 수 있는 매크로 키보드, MK 1을 제작했습니다.",
+        "타 경쟁상품 대비 경쟁력을 확보하기 위해 커스터마이즈 옵션을 제공합니다.",
+        "소비자는 스위치, 커스텀 아크릴 각인, 키캡 등의 커스터마이징을 할 수 있습니다.",
+        "타 경쟁상품이 제공하는 중국어 프로그램이 아닌, 설치 없이 구동할 수 있는 웹 프로그램까지 제공합니다.",
+        "",
+        "MK 1은 판매 1주만에 1회 생산량 72대가 완판되어 총 매출액 150만원을 달성한 바 있습니다."
+      ],
+      "achievement": [
+        {"content" : "총 매출액", "highlight" : false},
+        {"content" : "150만원", "highlight" : true},
+        {"content" : "달성", "highlight" : false}
+      ],
       "media": null
     },
     {
       "id": 10,
       "imageUrl": ["VOAH.jpg"],
       "year": 2023,
-      "title": "",
-      "detail": "",
-      "achievement": null,
-      "media": null
+      "title": "차세대 한국형 통합 업무관리 플랫폼, VOAH",
+      "detail": [
+        "기존의 협업 도구인 슬랙, 노션, 구글 캘린더 등을 사용할 때 서비스 간의 연동성에서 불편한 부분이 있었습니다.",
+        "",
+        "위와 같은 문제를 해결하기 위해, 각 기능을 통합한 ‘VOAH’를 개발했습니다.",
+        "사용자는 하나의 윈도우에서 문서 작성, 채팅, 일정관리 등 다양한 작업을 효율적으로 처리할 수 있습니다.",
+        "또한, 기존의 캡쳐 하거나 PDF형식으로 출력하여 다른 플랫폼으로 옮기던 번거로움은 보아의 강력한 데이터 연속성 설계를 통해, 문서나 채팅, 일정 등을 간편하게 임베딩하여 작업할 수 있습니다.",
+        "",
+        "소규모 스타트업에서 자원을 효율적으로 활용할 수 있도록, 모듈화 설계를 통해 기업에서 필요한 기능 모듈만 골라 효율적으로 구동할 수 있습니다."
+      ],
+      "achievement": [
+        {"content" : "공개SW개발자대회", "highlight" : false},
+        {"content" : "특별상", "highlight" : true},
+        {"content" : "수상", "highlight" : false}
+      ]
     }
   ]
 }
