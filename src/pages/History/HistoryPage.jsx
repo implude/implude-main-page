@@ -208,8 +208,8 @@ export default function HistoryPage() {
             세상을 바꾸고 있습니다
           </IntroText>
         </Row>
-        <Row justify="flex-start">
-          <Row justify="space-between" gap={'9.63%'} padding={'0 3rem'}>
+        <Row>
+          <Row justify="space-between" padding={'0 3rem'} width={'100%'}>
             <YearContainer gap={'4.625rem'}>
               {[...Array(9)].map((v, i) => (
                 <>
@@ -229,10 +229,10 @@ export default function HistoryPage() {
             <HistoryContainer gap={'6.25rem'} width="62.2%">
               {data[2023 - activated].map((v, i) => (
                 <HistoryBlock key={i}>
-                  <Header1 $bold color={'--brand-400'} style={{ display: 'inline' }}>
+                  <Header1 $bold color={'--brand-400'}>
                     {v.date}
                   </Header1>
-                  <Header1 $bold color={'--gray-black'} style={{ display: 'inline' }}>
+                  <Header1 $bold color={'--gray-black'}>
                     {v.text}
                   </Header1>
                 </HistoryBlock>
