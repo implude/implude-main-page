@@ -25,11 +25,6 @@ a {
     font-size: 50%;
   }
 }
-@font-face {
-  font-family: 'VITRO CORE OTF';
-  src: url(VisionFont/VITRO_CORE_OTF.otf);
-}
-
 :root {
   --gray-white: #ffffff;
   --gray-0: #fbfbfb;

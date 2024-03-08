@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Col, Description, Header1, Row, Title, Wrap, RecruitText } from '../../components/atomic'
 import { styled } from 'styled-components'
 import { useMediaQuery } from 'react-responsive'
+import './VisionPage.css'
 
 export default function VisionPage() {
   const [version, setVersion] = useState(0)
@@ -23,7 +24,7 @@ export default function VisionPage() {
         <Wrap padding={'0 0 0 0.625rem'} style={{ flexGWrap: 1 }}>
           <Title color="--black">비전</Title>
         </Wrap>
-        <Col style={{ flexGrow: 5 }}>
+        <Col style={{ flexGrow: 5 }} gap="6.25rem">
           <VisionVerContainer justify={layout549 ? 'center' : 'right'} gap={layout549 ? '2.5rem' : '5.375rem'}>
             <VisionVer color={version == 0 ? '--gray-black' : '--gray-400'} $bold onClick={onClickVer1}>
               임플루드 비전 1.0
@@ -204,7 +205,7 @@ const OldVision = () => {
     <div>
       <Row justify="center">
         <Col gap="5rem">
-          <Title className="Thinking" color="--black" style={{ fontSize: '3rem', textAlign: 'center' }}>
+          <Title className="Thinking" color="--black" style={{ fontSize: '6rem', textAlign: 'center' }}>
             &quot;상상하는 대로 만들어라&quot;
           </Title>
           <ImpludeDesc color="--black">
