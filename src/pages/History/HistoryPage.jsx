@@ -8,6 +8,7 @@ import { Blank, Col, Description, Header1, Row, Title } from '../../components/a
 export default function HistoryPage() {
   const [activated, setActivated] = useState(2023)
   const isMobile = useMediaQuery({ query: '(max-width: 576px)' })
+  const isMobileLg = useMediaQuery({ query: '(max-width: 768px)' })
 
   const data = [
     [
@@ -29,7 +30,7 @@ export default function HistoryPage() {
       },
       {
         date: '2023.11',
-        text: '한국벤처창업아이템경진대회 동상 수상',
+        text: '한국 벤처창업아이템 경진대회 동상 수상',
       },
       {
         date: '2023.12',
@@ -37,7 +38,7 @@ export default function HistoryPage() {
       },
       {
         date: '2023.12',
-        text: '공개SW개발자대회 특별상 수상',
+        text: '공개SW 개발자대회 특별상 수상',
       },
     ],
     [
@@ -59,7 +60,7 @@ export default function HistoryPage() {
       },
       {
         date: '2022.12',
-        text: '공개SW개발자대회 특별상 수상',
+        text: '공개SW 개발자대회 특별상 수상',
       },
     ],
     [
@@ -199,7 +200,7 @@ export default function HistoryPage() {
   ]
   return (
     <Col gap="13.75rem" margin="13.75rem auto" width="100%">
-      <Col gap={'7.5rem'} margin="0 auto">
+      <Col gap={'7.5rem'} margin="0 auto" width={isMobile ? '100%' : isMobileLg ? '80%' : '64%'}>
         <Row justify="center">
           <IntroText color={'--gray-black'}>
             <span>임플루드</span>는 오늘도
@@ -207,8 +208,8 @@ export default function HistoryPage() {
             세상을 바꾸고 있습니다
           </IntroText>
         </Row>
-        <Row justify="center">
-          <Row justify="space-between" width="80.438rem" padding={'0 3rem'}>
+        <Row justify="flex-start">
+          <Row justify="space-between" gap={'9.63%'} padding={'0 3rem'}>
             <YearContainer gap={'4.625rem'}>
               {[...Array(9)].map((v, i) => (
                 <>
@@ -225,13 +226,13 @@ export default function HistoryPage() {
                 </>
               ))}
             </YearContainer>
-            <HistoryContainer gap={'6.25rem'} width={'50rem'}>
+            <HistoryContainer gap={'6.25rem'} width="62.2%">
               {data[2023 - activated].map((v, i) => (
                 <HistoryBlock key={i}>
-                  <Header1 $bold color={'--brand-400'}>
+                  <Header1 $bold color={'--brand-400'} style={{ display: 'inline' }}>
                     {v.date}
                   </Header1>
-                  <Header1 $bold color={'--gray-black'}>
+                  <Header1 $bold color={'--gray-black'} style={{ display: 'inline' }}>
                     {v.text}
                   </Header1>
                 </HistoryBlock>
@@ -322,6 +323,6 @@ const YearCircle = styled.div`
         `}
 `
 const HistoryContainer = styled(Col)``
-const HistoryBlock = styled.div`
+const HistoryBlock = styled(Col)`
   position: relative;
 `

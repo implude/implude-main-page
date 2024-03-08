@@ -32,10 +32,10 @@ export const Header1 = styled(TypoRef)`
 `
 
 export const Header2 = styled(TypoRef)`
-  font-size: 1.7rem;
+  font-size: 2.375rem;
   font-style: normal;
   font-weight: 500;
-  line-height: 2rem;
+  line-height: 2.813rem;
 `
 
 export const Description = styled(TypoRef)`
@@ -50,7 +50,7 @@ export const Detail = styled(TypoRef)`
 `
 
 export const RecruitText = styled(TypoRef)<{ highlight?: Boolean; $bold?: Boolean }>`
-  font-size: ${(p) => (p.highlight ? '2rem' : '1.85rem')};
+  font-size: ${(p) => (p.highlight ? '2.5rem' : '2.25rem')};
   font-weight: ${(p) => (p.$bold ? '700' : '500')};
   font-style: normal;
   li {

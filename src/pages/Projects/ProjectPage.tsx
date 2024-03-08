@@ -15,18 +15,22 @@ export default function ProjectPage() {
           <Header1 color={'--gray-300'}>{projectData.year}</Header1>
           <Title color={'--gray-black'}>{projectData.title}</Title>
         </Col>
-        <Row gap="3.75rem" style={{ flexDirection: isMobile ? 'column' : 'row' }}>
+        <Wrap gap="3.75rem" style={{ flexDirection: isMobile ? 'column' : 'row' }}>
           {[...projectData.imageUrl].map((url, i) => {
             return (
               <img
                 key={i}
                 src={imageFolderPath + url}
                 alt={url}
-                style={{ height: '21.375rem', borderRadius: '1.6rem' }}
+                style={{
+                  height: isMobile ? 'auto' : '21.375rem',
+                  width: isMobile ? '100%' : 'auto',
+                  borderRadius: '1.6rem',
+                }}
               />
             )
           })}
-        </Row>
+        </Wrap>
         <Description color={'--gray-black'}>
           {projectData.detail.map((x) => (
             <>
@@ -37,7 +41,7 @@ export default function ProjectPage() {
         </Description>
         <Col>
           {projectData?.achievement ? (
-            <Row gap="6.25rem" align="center" margin="0 0 8.75rem 0">
+            <Wrap gap="6.25rem" align="center" margin="0 0 8.75rem 0">
               <Title color="--gray-black">성과</Title>
               <Row gap="1rem">
                 {projectData.achievement.map((x) => (
@@ -46,10 +50,10 @@ export default function ProjectPage() {
                   </Header1>
                 ))}
               </Row>
-            </Row>
+            </Wrap>
           ) : null}
           {projectData.media ? (
-            <Row gap="6.25rem" margin="0 0 8.75rem 0">
+            <Wrap gap="6.25rem" margin="0 0 8.75rem 0">
               <Title color="--gray-black">언론 노출</Title>
               <Link to="https://game.donga.com/105214/">
                 <Col>
@@ -62,7 +66,7 @@ export default function ProjectPage() {
                   </RecruitText>
                 </Col>
               </Link>
-            </Row>
+            </Wrap>
           ) : null}
         </Col>
       </Col>
