@@ -226,11 +226,7 @@ const NewVision = () => {
       <Row justify="center">
         <Col>
           <span style={{ display: 'flex', justifyContent: 'center' }}>
-            <img
-              src="src/assets/VisionThumbnail/Vision2.jpg"
-              style={{ width: '45.8125rem', height: 'auto', marginBottom: '2rem' }}
-              alt="dd"
-            />
+            <img src="img/Vision2.jpg" style={{ width: '45.8125rem', height: 'auto', marginBottom: '2rem' }} alt="dd" />
           </span>
           <ImpludeDesc color="--black">
             우리가 사용하는 평범하고도 대단한 많은 것들은 처음엔 누군가의 상상에 의해 만들어졌
