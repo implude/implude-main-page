@@ -43,13 +43,13 @@ export default function ProjectPage() {
           {projectData?.achievement ? (
             <Wrap gap="6.25rem" align="center" margin="0 0 8.75rem 0">
               <Title color="--gray-black">성과</Title>
-              <Row gap="1rem">
+              <Wrap gap="1rem" justify="center">
                 {projectData.achievement.map((x) => (
                   <Header1 $bold color={x.highlight ? '--brand-600' : '--gray-black'}>
                     {x.content}
                   </Header1>
                 ))}
-              </Row>
+              </Wrap>
             </Wrap>
           ) : null}
           {projectData.media ? (
