@@ -55,3 +55,9 @@ a {
 
   --positive-500: #27b278;
 }
+
+.logo-text {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}

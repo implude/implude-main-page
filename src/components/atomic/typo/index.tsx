@@ -18,7 +18,7 @@ const TypoRef = styled.div<TypoType>`
 export const Title = styled(TypoRef)`
   font-size: 4rem;
   font-style: normal;
-  font-weight: ${(p) => (p.$bold ? '900' : '800')};
+  font-weight: ${(p) => (p.$bold ? '900' : '700')};
   line-height: 4.75rem;
 `
 
