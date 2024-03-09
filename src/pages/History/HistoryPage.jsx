@@ -271,7 +271,7 @@ export default function HistoryPage() {
                   </Header1>
                 </Row>
                 <Header1 $bold style={{ overflow: 'hidden', textOverflow: 'ellipsis' }} color={'--gray-black'}>
-                  [STAC2022] 미래산업 부문 대상 &lquo;ASD&rquo; &ldquo;AI를 통한 더 좋은 공부 방법을 소개해요&rdquo;
+                  [STAC2022] 미래산업 부문 대상 &lsquo;ASD&rsquo; &ldquo;AI를 통한 더 좋은 공부 방법을 소개해요&rdquo;
                 </Header1>
               </Col>
             </Link>
