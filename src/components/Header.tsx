@@ -11,7 +11,7 @@ const Header = () => {
     <>
       <Wrap padding="0.75rem 2.438rem" gap={'0 3.25rem'} justify="space-between" align="center">
         <Link to="/">
-          <Header1 color="--gray-900" $bold>
+          <Header1 color="--gray-900" className="logo-text" $bold>
             #IMPLUDE
           </Header1>
         </Link>

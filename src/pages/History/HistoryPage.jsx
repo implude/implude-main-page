@@ -1,9 +1,8 @@
-import React from 'react'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useMediaQuery } from 'react-responsive'
-import styled, { css } from 'styled-components'
-import { Blank, Col, Description, Header1, Row, Title } from '../../components/atomic'
+import { styled, css } from 'styled-components'
+import { Col, Header1, Row, Title } from '../../components/atomic'
 
 export default function HistoryPage() {
   const [activated, setActivated] = useState(2023)
@@ -29,12 +28,12 @@ export default function HistoryPage() {
         text: 'MK 1  1주 총 생산량 완판 / 매출 150만원 달성',
       },
       {
-        date: '2023.11',
-        text: '한국 벤처창업아이템 경진대회 동상 수상',
+        date: '2023.08',
+        text: '세종특별자치시 공공데이터 활용 창업경진대회 우수상 수상',
       },
       {
-        date: '2023.12',
-        text: '세종특별자치시 공공데이터 활용 창업경진대회 우수상 수상',
+        date: '2023.11',
+        text: '한국 벤처창업아이템 경진대회 동상 수상',
       },
       {
         date: '2023.12',
@@ -257,7 +256,7 @@ export default function HistoryPage() {
                   </Header1>
                 </Row>
                 <Header1 $bold style={{ overflow: 'hidden', textOverflow: 'ellipsis' }} color={'--gray-black'}>
-                  [스타트업 플러스] 창업은 시작이 반... "상상하는 대로 만들어라"
+                  [스타트업 플러스] 창업은 시작이 반... &ldquo;상상하는 대로 만들어라&rdquo;
                 </Header1>
               </Col>
             </Link>
@@ -268,11 +267,11 @@ export default function HistoryPage() {
                     게임 동아
                   </Header1>
                   <Header1 $bold color={'--gray-black'}>
-                    2020.07.21
+                    2022.11.14
                   </Header1>
                 </Row>
                 <Header1 $bold style={{ overflow: 'hidden', textOverflow: 'ellipsis' }} color={'--gray-black'}>
-                  [STAC2022] 미래산업 부문 대상 'ASD' "AI를 통한 더 좋은 공부 방법을 소개해요"
+                  [STAC2022] 미래산업 부문 대상 &lquo;ASD&rquo; &ldquo;AI를 통한 더 좋은 공부 방법을 소개해요&rdquo;
                 </Header1>
               </Col>
             </Link>

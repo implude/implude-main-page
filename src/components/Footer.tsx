@@ -1,5 +1,5 @@
 import React from 'react'
-import { Col, Header1, Header2, Row, Title, Wrap, Detail } from './atomic'
+import { Col, Row, Title, Wrap, Detail } from './atomic'
 
 import Implude from '../assets/implude-light.svg?react'
 import Youtube from '../assets/youtube.svg?react'
@@ -14,7 +14,7 @@ const Footer = () => {
           <Wrap gap={'1rem'} align="center">
             <Implude height="6.25rem" width="6.25rem" />
             <Col align="start">
-              <Title color="--gray-white" $bold>
+              <Title color="--gray-white" className="logo-text">
                 #IMPLUDE
               </Title>
               <Wrap gap="0.5rem">
